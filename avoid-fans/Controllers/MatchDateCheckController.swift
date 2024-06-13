@@ -16,7 +16,7 @@ class MatchDateCheckController{
         let startDate = userInput.startDate
         let endDate = userInput.endDate
         
-        return isMatchFound(start: startDate, end: endDate, matches: <#T##[Match]#>)
+        return isMatchFound(start: startDate, end: endDate, matches: matches)
     }
     
     
