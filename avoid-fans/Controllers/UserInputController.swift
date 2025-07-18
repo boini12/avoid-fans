@@ -11,7 +11,16 @@ class UserInputController{
     
     private let dateFormatter = DateFormatter()
     
-    func validateInput(startDate: Date, endDate: Date) -> Bool{
+    public func ValidDates(startDate: Date, endDate: Date) -> Bool
+    {
         return startDate < endDate;
+    }
+    
+    public func ValidStations(start: String, destination: String) -> Bool
+    {
+        if start.compare(destination, options: .caseInsensitive) == .orderedSame {
+            return false;
+        }
+        return true;
     }
 }

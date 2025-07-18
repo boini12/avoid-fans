@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82ACC6DB2E2AC59900833A41 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACC6DA2E2AC59400833A41 /* PickerView.swift */; };
 		B0AE80A42A98C6B300EA557E /* avoid_fansApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE80A32A98C6B300EA557E /* avoid_fansApp.swift */; };
 		B0AE80A82A98C6B700EA557E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0AE80A72A98C6B700EA557E /* Assets.xcassets */; };
 		B0AE80AB2A98C6B700EA557E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0AE80AA2A98C6B700EA557E /* Preview Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82ACC6DA2E2AC59400833A41 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		B0AE80A02A98C6B300EA557E /* avoid-fans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "avoid-fans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AE80A32A98C6B300EA557E /* avoid_fansApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = avoid_fansApp.swift; sourceTree = "<group>"; };
 		B0AE80A72A98C6B700EA557E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		B0AE80D02A98CFCE00EA557E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				82ACC6DA2E2AC59400833A41 /* PickerView.swift */,
 				B0AE80CD2A98C86F00EA557E /* ContentView.swift */,
 				B0AE80D32A98D29800EA557E /* UserInputView.swift */,
 				B0AE80D92A98E4A800EA557E /* ResultView.swift */,
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0AE80D42A98D29800EA557E /* UserInputView.swift in Sources */,
+				82ACC6DB2E2AC59900833A41 /* PickerView.swift in Sources */,
 				B0AE80CE2A98C86F00EA557E /* ContentView.swift in Sources */,
 				B0AE80D82A98D59800EA557E /* UserInputController.swift in Sources */,
 				B0AE80A42A98C6B300EA557E /* avoid_fansApp.swift in Sources */,
