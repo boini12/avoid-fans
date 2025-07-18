@@ -19,7 +19,6 @@ class MatchDateCheckController{
         return isMatchFound(start: startDate, end: endDate, matches: matches)
     }
     
-    
     /// Find Football matches that occur during the time provided
     /// - Parameters:
     ///   - start: represents the start of a journey
