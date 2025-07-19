@@ -2,16 +2,12 @@
 //  Match.swift
 //  avoid-fans
 //
-//  Created by Ines on 13.06.24.
+//  Created by Ines Bohr on 19.07.25.
 //
 
-import Foundation
-
-struct Match: Codable {
-    let id: Int
-    let homeTeam: Team
-    let awayTeam: Team
-    let utcDate: Date
-    let place : String
-    // Add other properties you need
+struct Match : Codable {
+    let matchDateTime: String
+    let team1: Team
+    let team2: Team
+    let matchResults: [MatchResult]?
 }

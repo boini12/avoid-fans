@@ -5,11 +5,14 @@
 //  Created by Ines on 25.08.23.
 //
 
-import UIKit
+import Foundation
 
-class UserInputController{
+struct UserInputController{
     
-    private let dateFormatter = DateFormatter()
+    public func getStations() -> [String]
+    {
+        return ["Hamburg", "Hannover", "Munich", "Cologne", "Essen", "Duisburg", "Dresden", "Berlin", "Stuttgart"]
+    }
     
     public func ValidDates(startDate: Date, endDate: Date) -> Bool
     {

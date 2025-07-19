@@ -10,13 +10,18 @@ import SwiftUI
 struct UserInputView: View {
     @State private var startDate = Date.now
     @State private var endDate = Date.now
-    @State private var userInputController = UserInputController()
+    private var userInputController = UserInputController()
     @State private var fansAvoided = false
     @State private var validDates = true
     @State private var validStations = true
-    let stations = ["Hamburg", "Hannover", "Munich", "Cologne", "Essen", "Duisburg", "Dresden", "Berlin", "Stuttgard"]
     @State private var selectedStartIndex =  0
     @State private var selectedDestinationIndex = 0
+    private var stations: [String] = []
+    private var apiManager = APIManager()
+    
+    init() {
+        stations = userInputController.getStations()
+    }
     
     var body: some View {
         VStack{
@@ -46,13 +51,22 @@ struct UserInputView: View {
                     selection: $endDate, displayedComponents: [.date, .hourAndMinute])
             .padding()
             
-            // Execute the API check
             Button("Check for crazy fans")
             {
                 validDates = userInputController.ValidDates(startDate: startDate, endDate: endDate)
                 validStations = userInputController.ValidStations(start: stations[selectedStartIndex], destination: stations[selectedDestinationIndex])
             }
             .padding()
+            .task {
+                do{
+                    var matches =  try await apiManager.fetchBundesligaMatches()
+                    var controller = APIDataController(matches: matches)
+                    var result = controller.checkForMatches(startDate: startDate, endDate: endDate)
+                    print(result)
+                }catch{
+                    // do nothing for now
+                }
+            }
             
             if(!validDates)
             {
