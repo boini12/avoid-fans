@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct UserInputView: View {
+    @StateObject var viewModel = UserInputViewModel()
+    
     @State private var startDate = Date.now
     @State private var endDate = Date.now
     private var userInputController = UserInputController()
     @State private var fansAvoided = false
     @State private var validDates = true
     @State private var validStations = true
-    @State private var selectedStartIndex =  0
+    @State private var selectedOriginIndex =  0
     @State private var selectedDestinationIndex = 0
     private var stations: [String] = []
     private var apiManager = APIManager()
@@ -28,8 +30,8 @@ struct UserInputView: View {
             HStack
             {
                 Spacer(minLength: 0)
-                // Starting station
-                PickerView(stations: stations, selectedOptionIndex: $selectedStartIndex)
+                // Origin
+                PickerView(stations: stations, selectedOptionIndex: $selectedOriginIndex)
                 Spacer(minLength: 0)
             }
             .padding()
@@ -53,29 +55,21 @@ struct UserInputView: View {
             
             Button("Check for crazy fans")
             {
-                validDates = userInputController.ValidDates(startDate: startDate, endDate: endDate)
-                validStations = userInputController.ValidStations(start: stations[selectedStartIndex], destination: stations[selectedDestinationIndex])
-            }
+                let userInput = UserInput(startDate: startDate, endDate: endDate, origin: stations[selectedOriginIndex], destination: stations[selectedDestinationIndex])
+                viewModel.validate(input: userInput)
+            }.errorAlert(error: $viewModel.error)
             .padding()
+            
+            // Run an async task to make a request to the API
             .task {
                 do{
-                    var matches =  try await apiManager.fetchBundesligaMatches()
-                    var controller = APIDataController(matches: matches)
-                    var result = controller.checkForMatches(startDate: startDate, endDate: endDate)
+                    let matches =  try await apiManager.fetchBundesligaMatches()
+                    let controller = APIDataController(matches: matches)
+                    let result = controller.checkForMatches(startDate: startDate, endDate: endDate)
                     print(result)
                 }catch{
                     // do nothing for now
                 }
-            }
-            
-            if(!validDates)
-            {
-                Text("The start data cannot be smaller than the end date.")
-            }
-            
-            if(!validStations)
-            {
-                Text("The start and destination station cannot be the same.")
             }
         }
     }

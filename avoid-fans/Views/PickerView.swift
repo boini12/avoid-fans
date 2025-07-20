@@ -26,7 +26,7 @@ struct PickerView: View {
 
 struct PickerView_Previews: PreviewProvider {
     static var previews: some View {
-        var stations = ["Hamburg", "Munich", "Cologne", "Berlin"]
+        let stations = ["Hamburg", "Munich", "Cologne", "Berlin"]
         @State var index = 0;
         PickerView(stations: stations, selectedOptionIndex: $index)
     }
