@@ -17,14 +17,18 @@
 		B0AE80A42A98C6B300EA557E /* avoid_fansApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE80A32A98C6B300EA557E /* avoid_fansApp.swift */; };
 		B0AE80A82A98C6B700EA557E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0AE80A72A98C6B700EA557E /* Assets.xcassets */; };
 		B0AE80AB2A98C6B700EA557E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0AE80AA2A98C6B700EA557E /* Preview Assets.xcassets */; };
-		B0AE80B52A98C6B700EA557E /* avoid_fansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE80B42A98C6B700EA557E /* avoid_fansTests.swift */; };
-		B0AE80BF2A98C6B700EA557E /* avoid_fansUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE80BE2A98C6B700EA557E /* avoid_fansUITests.swift */; };
-		B0AE80C12A98C6B700EA557E /* avoid_fansUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE80C02A98C6B700EA557E /* avoid_fansUITestsLaunchTests.swift */; };
 		B0AE80CE2A98C86F00EA557E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE80CD2A98C86F00EA557E /* ContentView.swift */; };
 		B0AE80D42A98D29800EA557E /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE80D32A98D29800EA557E /* UserInputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		82FD1C2E2E2D2D2200FCE8F8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0AE80982A98C6B300EA557E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0AE809F2A98C6B300EA557E;
+			remoteInfo = "avoid-fans";
+		};
 		B0AE80B12A98C6B700EA557E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B0AE80982A98C6B300EA557E /* Project object */;
@@ -49,15 +53,13 @@
 		82F696482E2B891300949282 /* APIDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataController.swift; sourceTree = "<group>"; };
 		82FD1C1D2E2D1B3800FCE8F8 /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
 		82FD1C232E2D206B00FCE8F8 /* ValidationAlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlertError.swift; sourceTree = "<group>"; };
+		82FD1C2A2E2D2D2200FCE8F8 /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AE80A02A98C6B300EA557E /* avoid-fans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "avoid-fans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AE80A32A98C6B300EA557E /* avoid_fansApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = avoid_fansApp.swift; sourceTree = "<group>"; };
 		B0AE80A72A98C6B700EA557E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0AE80AA2A98C6B700EA557E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B0AE80B02A98C6B700EA557E /* avoid-fansTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "avoid-fansTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0AE80B42A98C6B700EA557E /* avoid_fansTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = avoid_fansTests.swift; sourceTree = "<group>"; };
 		B0AE80BA2A98C6B700EA557E /* avoid-fansUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "avoid-fansUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0AE80BE2A98C6B700EA557E /* avoid_fansUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = avoid_fansUITests.swift; sourceTree = "<group>"; };
-		B0AE80C02A98C6B700EA557E /* avoid_fansUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = avoid_fansUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B0AE80CD2A98C86F00EA557E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B0AE80D32A98D29800EA557E /* UserInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,9 +69,17 @@
 		82F6964A2E2B8C9F00949282 /* Util */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Util; sourceTree = "<group>"; };
 		82FD1C192E2D19C100FCE8F8 /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
 		82FD1C1F2E2D200000FCE8F8 /* Extension */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extension; sourceTree = "<group>"; };
+		82FD1C2B2E2D2D2200FCE8F8 /* Unit Tests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Unit Tests"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		82FD1C272E2D2D2200FCE8F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B0AE809D2A98C6B300EA557E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,8 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				B0AE80A22A98C6B300EA557E /* avoid-fans */,
-				B0AE80B32A98C6B700EA557E /* avoid-fansTests */,
-				B0AE80BD2A98C6B700EA557E /* avoid-fansUITests */,
+				82FD1C2B2E2D2D2200FCE8F8 /* Unit Tests */,
 				B0AE80A12A98C6B300EA557E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,6 +129,7 @@
 				B0AE80A02A98C6B300EA557E /* avoid-fans.app */,
 				B0AE80B02A98C6B700EA557E /* avoid-fansTests.xctest */,
 				B0AE80BA2A98C6B700EA557E /* avoid-fansUITests.xctest */,
+				82FD1C2A2E2D2D2200FCE8F8 /* Unit Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,23 +156,6 @@
 				B0AE80AA2A98C6B700EA557E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		B0AE80B32A98C6B700EA557E /* avoid-fansTests */ = {
-			isa = PBXGroup;
-			children = (
-				B0AE80B42A98C6B700EA557E /* avoid_fansTests.swift */,
-			);
-			path = "avoid-fansTests";
-			sourceTree = "<group>";
-		};
-		B0AE80BD2A98C6B700EA557E /* avoid-fansUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B0AE80BE2A98C6B700EA557E /* avoid_fansUITests.swift */,
-				B0AE80C02A98C6B700EA557E /* avoid_fansUITestsLaunchTests.swift */,
-			);
-			path = "avoid-fansUITests";
 			sourceTree = "<group>";
 		};
 		B0AE80CF2A98CFC400EA557E /* Models */ = {
@@ -197,6 +190,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		82FD1C292E2D2D2200FCE8F8 /* Unit Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 82FD1C302E2D2D2200FCE8F8 /* Build configuration list for PBXNativeTarget "Unit Tests" */;
+			buildPhases = (
+				82FD1C262E2D2D2200FCE8F8 /* Sources */,
+				82FD1C272E2D2D2200FCE8F8 /* Frameworks */,
+				82FD1C282E2D2D2200FCE8F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				82FD1C2F2E2D2D2200FCE8F8 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				82FD1C2B2E2D2D2200FCE8F8 /* Unit Tests */,
+			);
+			name = "Unit Tests";
+			packageProductDependencies = (
+			);
+			productName = "Unit Tests";
+			productReference = 82FD1C2A2E2D2D2200FCE8F8 /* Unit Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B0AE809F2A98C6B300EA557E /* avoid-fans */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0AE80C42A98C6B700EA557E /* Build configuration list for PBXNativeTarget "avoid-fans" */;
@@ -263,9 +279,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					82FD1C292E2D2D2200FCE8F8 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = B0AE809F2A98C6B300EA557E;
+					};
 					B0AE809F2A98C6B300EA557E = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -295,11 +315,19 @@
 				B0AE809F2A98C6B300EA557E /* avoid-fans */,
 				B0AE80AF2A98C6B700EA557E /* avoid-fansTests */,
 				B0AE80B92A98C6B700EA557E /* avoid-fansUITests */,
+				82FD1C292E2D2D2200FCE8F8 /* Unit Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		82FD1C282E2D2D2200FCE8F8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B0AE809E2A98C6B300EA557E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -326,6 +354,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		82FD1C262E2D2D2200FCE8F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B0AE809C2A98C6B300EA557E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -347,7 +382,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0AE80B52A98C6B700EA557E /* avoid_fansTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,14 +389,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0AE80C12A98C6B700EA557E /* avoid_fansUITestsLaunchTests.swift in Sources */,
-				B0AE80BF2A98C6B700EA557E /* avoid_fansUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		82FD1C2F2E2D2D2200FCE8F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B0AE809F2A98C6B300EA557E /* avoid-fans */;
+			targetProxy = 82FD1C2E2E2D2D2200FCE8F8 /* PBXContainerItemProxy */;
+		};
 		B0AE80B22A98C6B700EA557E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B0AE809F2A98C6B300EA557E /* avoid-fans */;
@@ -376,6 +413,49 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		82FD1C312E2D2D2200FCE8F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "avoid-fans.Unit-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/avoid-fans.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/avoid-fans";
+			};
+			name = Debug;
+		};
+		82FD1C322E2D2D2200FCE8F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "avoid-fans.Unit-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/avoid-fans.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/avoid-fans";
+			};
+			name = Release;
+		};
 		B0AE80C22A98C6B700EA557E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -619,6 +699,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		82FD1C302E2D2D2200FCE8F8 /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				82FD1C312E2D2D2200FCE8F8 /* Debug */,
+				82FD1C322E2D2D2200FCE8F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		B0AE809B2A98C6B300EA557E /* Build configuration list for PBXProject "avoid-fans" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
