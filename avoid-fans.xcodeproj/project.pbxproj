@@ -162,8 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				82FD1C252E2D259700FCE8F8 /* API */,
-				82FD1C232E2D206B00FCE8F8 /* ValidationAlertError.swift */,
 				82FD1C1D2E2D1B3800FCE8F8 /* UserInput.swift */,
+				82FD1C232E2D206B00FCE8F8 /* ValidationAlertError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
