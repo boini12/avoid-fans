@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		822B2BF12E2D3712005C823D /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B2BF02E2D370E005C823D /* ValidationError.swift */; };
+		822B2BF32E2D37DE005C823D /* ValidationErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B2BF22E2D37D9005C823D /* ValidationErrorType.swift */; };
 		82ACC6DB2E2AC59900833A41 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACC6DA2E2AC59400833A41 /* PickerView.swift */; };
 		82F696432E2B84D800949282 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F696422E2B84D600949282 /* Match.swift */; };
 		82F696452E2B84FA00949282 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F696442E2B84F800949282 /* Team.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		822B2BF02E2D370E005C823D /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		822B2BF22E2D37D9005C823D /* ValidationErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrorType.swift; sourceTree = "<group>"; };
 		82ACC6DA2E2AC59400833A41 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		82F696422E2B84D600949282 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		82F696442E2B84F800949282 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -104,6 +108,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		822B2BEF2E2D3706005C823D /* ValidationError */ = {
+			isa = PBXGroup;
+			children = (
+				822B2BF22E2D37D9005C823D /* ValidationErrorType.swift */,
+				822B2BF02E2D370E005C823D /* ValidationError.swift */,
+				82FD1C232E2D206B00FCE8F8 /* ValidationAlertError.swift */,
+			);
+			path = ValidationError;
+			sourceTree = "<group>";
+		};
 		82FD1C252E2D259700FCE8F8 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,9 +175,9 @@
 		B0AE80CF2A98CFC400EA557E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				822B2BEF2E2D3706005C823D /* ValidationError */,
 				82FD1C252E2D259700FCE8F8 /* API */,
 				82FD1C1D2E2D1B3800FCE8F8 /* UserInput.swift */,
-				82FD1C232E2D206B00FCE8F8 /* ValidationAlertError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,6 +387,8 @@
 				82ACC6DB2E2AC59900833A41 /* PickerView.swift in Sources */,
 				B0AE80CE2A98C86F00EA557E /* ContentView.swift in Sources */,
 				82F696472E2B853F00949282 /* MatchResult.swift in Sources */,
+				822B2BF32E2D37DE005C823D /* ValidationErrorType.swift in Sources */,
+				822B2BF12E2D3712005C823D /* ValidationError.swift in Sources */,
 				82F696432E2B84D800949282 /* Match.swift in Sources */,
 				B0AE80A42A98C6B300EA557E /* avoid_fansApp.swift in Sources */,
 			);
