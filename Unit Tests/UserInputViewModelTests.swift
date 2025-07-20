@@ -45,9 +45,22 @@ struct UserInputViewModelTests {
         // Act
         testInstance.validate(input: inputStub)
         
-        // Arrange
+        // Assert
         let error = testInstance.error as? ValidationError
         #expect(error == nil)
+    }
+    
+    // This is just a temporary test and will be replaced when the getStations()
+    // logic has been changed
+    @Test func generateStations() {
+        // Arrange
+        let testInstance = UserInputViewModel()
+        
+        // Act
+        let stations = testInstance.getStations()
+        
+        // Assert
+        #expect(stations.count > 0)
     }
     
     private func createUserInputMock(sameDate: Bool, sameStation: Bool) -> UserInput {
