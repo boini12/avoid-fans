@@ -12,17 +12,17 @@ struct UserInputView: View {
     
     @State private var startDate = Date.now
     @State private var endDate = Date.now
-    private var userInputController = UserInputController()
     @State private var fansAvoided = false
     @State private var validDates = true
     @State private var validStations = true
     @State private var selectedOriginIndex =  0
     @State private var selectedDestinationIndex = 0
+    
     private var stations: [String] = []
     private var apiManager = APIManager()
     
     init() {
-        stations = userInputController.getStations()
+        stations = viewModel.getStations()
     }
     
     var body: some View {

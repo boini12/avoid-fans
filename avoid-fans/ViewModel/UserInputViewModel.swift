@@ -50,6 +50,11 @@ final class UserInputViewModel : ObservableObject {
         }
     }
     
+    public func getStations() -> [String]
+    {
+        return ["Hamburg", "Hannover", "Munich", "Cologne", "Essen", "Duisburg", "Dresden", "Berlin", "Stuttgart"]
+    }
+    
     private func validateDate(startDate: Date, endDate: Date) -> Bool
     {
         return startDate < endDate;

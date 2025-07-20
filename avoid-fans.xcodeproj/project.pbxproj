@@ -22,7 +22,6 @@
 		B0AE80C12A98C6B700EA557E /* avoid_fansUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE80C02A98C6B700EA557E /* avoid_fansUITestsLaunchTests.swift */; };
 		B0AE80CE2A98C86F00EA557E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE80CD2A98C86F00EA557E /* ContentView.swift */; };
 		B0AE80D42A98D29800EA557E /* UserInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE80D32A98D29800EA557E /* UserInputView.swift */; };
-		B0AE80D82A98D59800EA557E /* UserInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE80D72A98D59800EA557E /* UserInputController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +60,6 @@
 		B0AE80C02A98C6B700EA557E /* avoid_fansUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = avoid_fansUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B0AE80CD2A98C86F00EA557E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B0AE80D32A98D29800EA557E /* UserInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputView.swift; sourceTree = "<group>"; };
-		B0AE80D72A98D59800EA557E /* UserInputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInputController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -192,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				82F696482E2B891300949282 /* APIDataController.swift */,
-				B0AE80D72A98D59800EA557E /* UserInputController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -342,7 +339,6 @@
 				B0AE80CE2A98C86F00EA557E /* ContentView.swift in Sources */,
 				82F696472E2B853F00949282 /* MatchResult.swift in Sources */,
 				82F696432E2B84D800949282 /* Match.swift in Sources */,
-				B0AE80D82A98D59800EA557E /* UserInputController.swift in Sources */,
 				B0AE80A42A98C6B300EA557E /* avoid_fansApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
