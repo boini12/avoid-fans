@@ -18,12 +18,7 @@ struct UserInputView: View {
     @State private var selectedOriginIndex =  0
     @State private var selectedDestinationIndex = 0
     
-    private var stations: [String] = []
     private var apiManager = APIManager()
-    
-    init() {
-        stations = viewModel.getStations()
-    }
     
     var body: some View {
         VStack{
@@ -31,7 +26,7 @@ struct UserInputView: View {
             {
                 Spacer(minLength: 0)
                 // Origin
-                PickerView(stations: stations, selectedOptionIndex: $selectedOriginIndex)
+                PickerView(stations: viewModel.getStations(), selectedOptionIndex: $selectedOriginIndex)
                 Spacer(minLength: 0)
             }
             .padding()
@@ -39,7 +34,7 @@ struct UserInputView: View {
             {
                 Spacer(minLength: 0)
                 // Destination
-                PickerView(stations: stations, selectedOptionIndex: $selectedDestinationIndex)
+                PickerView(stations: viewModel.getStations(), selectedOptionIndex: $selectedDestinationIndex)
                 Spacer(minLength: 0)
             }
             
@@ -55,7 +50,7 @@ struct UserInputView: View {
             
             Button("Check for crazy fans")
             {
-                let userInput = UserInput(startDate: startDate, endDate: endDate, origin: stations[selectedOriginIndex], destination: stations[selectedDestinationIndex])
+                let userInput = UserInput(startDate: startDate, endDate: endDate, origin: viewModel.getStations()[selectedOriginIndex], destination: viewModel.getStations()[selectedDestinationIndex])
                 viewModel.validate(input: userInput)
             }.errorAlert(error: $viewModel.error)
             .padding()
