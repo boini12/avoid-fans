@@ -17,7 +17,7 @@ jobs:
       - name: Build and test
         run: |
           xcodebuild clean test \
-            -project avoid-fans.xcodeproj \ 
+            -project avoid-fans.xcodeproj \
             -scheme avoid-fans \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=17.2' \
             ONLY_ACTIVE_ARCH=YES
