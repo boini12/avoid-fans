@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		822B2BF02E2D370E005C823D /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		822B2BF22E2D37D9005C823D /* ValidationErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrorType.swift; sourceTree = "<group>"; };
-		8280F21D2E2ECCBB00FF59CC /* avoid-fans.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "avoid-fans.xctestplan"; sourceTree = "<group>"; };
+		824F142E2E2ECFC1008651F6 /* avoid-fans.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "avoid-fans.xctestplan"; sourceTree = "<group>"; };
 		82ACC6DA2E2AC59400833A41 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		82F696422E2B84D600949282 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		82F696442E2B84F800949282 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		B0AE80972A98C6B300EA557E = {
 			isa = PBXGroup;
 			children = (
-				8280F21D2E2ECCBB00FF59CC /* avoid-fans.xctestplan */,
+				824F142E2E2ECFC1008651F6 /* avoid-fans.xctestplan */,
 				B0AE80A22A98C6B300EA557E /* avoid-fans */,
 				82FD1C2B2E2D2D2200FCE8F8 /* Unit Tests */,
 				B0AE80A12A98C6B300EA557E /* Products */,
