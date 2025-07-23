@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		821A04212E315603000C8069 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821A04202E315601000C8069 /* ResultView.swift */; };
 		822B2BF12E2D3712005C823D /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B2BF02E2D370E005C823D /* ValidationError.swift */; };
 		822B2BF32E2D37DE005C823D /* ValidationErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B2BF22E2D37D9005C823D /* ValidationErrorType.swift */; };
 		82ACC6DB2E2AC59900833A41 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACC6DA2E2AC59400833A41 /* PickerView.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		821A04202E315601000C8069 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		822B2BF02E2D370E005C823D /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		822B2BF22E2D37D9005C823D /* ValidationErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrorType.swift; sourceTree = "<group>"; };
 		824F142E2E2ECFC1008651F6 /* avoid-fans.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "avoid-fans.xctestplan"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		B0AE80D02A98CFCE00EA557E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				821A04202E315601000C8069 /* ResultView.swift */,
 				82FD1C1F2E2D200000FCE8F8 /* Extension */,
 				82ACC6DA2E2AC59400833A41 /* PickerView.swift */,
 				B0AE80CD2A98C86F00EA557E /* ContentView.swift */,
@@ -299,6 +302,7 @@
 				82F696472E2B853F00949282 /* MatchResult.swift in Sources */,
 				822B2BF32E2D37DE005C823D /* ValidationErrorType.swift in Sources */,
 				822B2BF12E2D3712005C823D /* ValidationError.swift in Sources */,
+				821A04212E315603000C8069 /* ResultView.swift in Sources */,
 				82F696432E2B84D800949282 /* Match.swift in Sources */,
 				B0AE80A42A98C6B300EA557E /* avoid_fansApp.swift in Sources */,
 			);
