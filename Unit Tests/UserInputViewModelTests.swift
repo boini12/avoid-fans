@@ -17,11 +17,12 @@ struct UserInputViewModelTests {
         let inputStub = createUserInputMock(sameDate: true, sameStation: false)
         
         // Act
-        testInstance.validate(input: inputStub)
+        let result = testInstance.validate(input: inputStub)
         
         // Assert
         let error = testInstance.error as? ValidationError
         #expect(error?.errorType == ValidationErrorType.invalidDate)
+        #expect(result == false)
     }
     
     @Test func validateSameStationEntered() {
@@ -30,11 +31,12 @@ struct UserInputViewModelTests {
         let inputStub = createUserInputMock(sameDate: false, sameStation: true)
         
         // Act
-        testInstance.validate(input: inputStub)
+        let result = testInstance.validate(input: inputStub)
         
         // Assert
         let error = testInstance.error as? ValidationError
         #expect(error?.errorType == ValidationErrorType.invalidStation)
+        #expect(result == false)
     }
     
     @Test func validateValidInputEntered() {
@@ -43,11 +45,12 @@ struct UserInputViewModelTests {
         let inputStub = createUserInputMock(sameDate: false, sameStation: false)
         
         // Act
-        testInstance.validate(input: inputStub)
+        let result = testInstance.validate(input: inputStub)
         
         // Assert
         let error = testInstance.error as? ValidationError
         #expect(error == nil)
+        #expect(result == true)
     }
     
     // This is just a temporary test and will be replaced when the getStations()

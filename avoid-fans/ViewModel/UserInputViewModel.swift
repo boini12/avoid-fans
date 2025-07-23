@@ -11,19 +11,20 @@ final class UserInputViewModel : ObservableObject {
     @Published var title: String = ""
     @Published var error: Swift.Error? = nil
     
-    public func validate(input: UserInput)
+    public func validate(input: UserInput) -> Bool
     {
         if(!validateDate(startDate: input.startDate, endDate: input.endDate))
         {
             error = ValidationError(errorType: ValidationErrorType.invalidDate)
-            return
+            return false
         }
         
         if(!validateStation(origin: input.origin, destination: input.destination))
         {
             error = ValidationError(errorType: ValidationErrorType.invalidStation)
-            return
+            return false
         }
+        return true
     }
     
     public func getStations() -> [String]
