@@ -53,24 +53,28 @@ struct UserInputView: View {
                 Button("Check for crazy fans")
                 {
                     let userInput = UserInput(startDate: startDate, endDate: endDate, origin: viewModel.getStations()[selectedOriginIndex], destination: viewModel.getStations()[selectedDestinationIndex])
-                    viewModel.validate(input: userInput)
-                    navigationPath.append("Test")
+                    let result = viewModel.validate(input: userInput)
+                    
+                    if(!result) {
+                        return
+                    }
+                    
+                    // Run an async task to make a request to the API
+                    Task {
+                        do{
+                            let matches =  try await apiManager.fetchBundesligaMatches()
+                            let controller = APIDataController(matches: matches)
+                            let result = controller.checkForMatches(startDate: startDate, endDate: endDate)
+                            navigationPath.append(String(result))
+                        }catch{
+                            // do nothing for now
+                        }
+                    }
+                    
                 }.errorAlert(error: $viewModel.error)
                 .padding()
-                
-                // Run an async task to make a request to the API
-                .task {
-                    do{
-                        let matches =  try await apiManager.fetchBundesligaMatches()
-                        let controller = APIDataController(matches: matches)
-                        let result = controller.checkForMatches(startDate: startDate, endDate: endDate)
-                        print(result)
-                    }catch{
-                        // do nothing for now
-                    }
-                }
             }.navigationDestination(for: String.self) { result in
-                ResultView()
+                ResultView(result: result)
             }
         }
     }

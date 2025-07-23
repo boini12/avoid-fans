@@ -8,7 +8,18 @@
 import SwiftUI
 
 struct ResultView: View {
+    @State var result: String = ""
+    
     var body: some View {
-        Text("Hello, World!")
+        
+        if (result == "false") {
+            VStack {
+                Text("✅")
+            }
+        }else {
+            VStack {
+                Text("❌")
+            }
+        }
     }
 }
