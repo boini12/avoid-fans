@@ -58,6 +58,8 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		82F6963D2E2B837300949282 /* API */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = API; sourceTree = "<group>"; };
 		82F6964A2E2B8C9F00949282 /* Util */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Util; sourceTree = "<group>"; };
+		82FC26362E33FAED00A2891C /* Styles */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Styles; sourceTree = "<group>"; };
+		82FC26432E33FEDA00A2891C /* Protocol */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Protocol; sourceTree = "<group>"; };
 		82FD1C192E2D19C100FCE8F8 /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
 		82FD1C1F2E2D200000FCE8F8 /* Extension */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Extension; sourceTree = "<group>"; };
 		82FD1C2B2E2D2D2200FCE8F8 /* Unit Tests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Unit Tests"; sourceTree = "<group>"; };
@@ -123,6 +125,8 @@
 		B0AE80A22A98C6B300EA557E /* avoid-fans */ = {
 			isa = PBXGroup;
 			children = (
+				82FC26432E33FEDA00A2891C /* Protocol */,
+				82FC26362E33FAED00A2891C /* Styles */,
 				82FD1C192E2D19C100FCE8F8 /* ViewModel */,
 				82F6964A2E2B8C9F00949282 /* Util */,
 				82F6963D2E2B837300949282 /* API */,
@@ -215,6 +219,8 @@
 			fileSystemSynchronizedGroups = (
 				82F6963D2E2B837300949282 /* API */,
 				82F6964A2E2B8C9F00949282 /* Util */,
+				82FC26362E33FAED00A2891C /* Styles */,
+				82FC26432E33FEDA00A2891C /* Protocol */,
 				82FD1C192E2D19C100FCE8F8 /* ViewModel */,
 				82FD1C1F2E2D200000FCE8F8 /* Extension */,
 			);

@@ -23,32 +23,34 @@ struct UserInputView: View {
     
     var body: some View {
         NavigationStack(path: $navigationPath) {
-            VStack{
+            VStack(spacing: 40){
+                Text("Enter your travel details and find out if any fans are taking your train!")
+                    .textStyle(HeaderTextStyle())
+                    .multilineTextAlignment(.center)
+                
                 HStack
                 {
-                    Spacer(minLength: 0)
                     // Origin
-                    PickerView(stations: viewModel.getStations(), selectedOptionIndex: $selectedOriginIndex)
-                    Spacer(minLength: 0)
+                    PickerView(stations: viewModel.getStations(), labelText: "Origin", selectedOptionIndex: $selectedOriginIndex)
+
                 }
-                .padding()
+                .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
                 HStack
                 {
-                    Spacer(minLength: 0)
                     // Destination
-                    PickerView(stations: viewModel.getStations(), selectedOptionIndex: $selectedDestinationIndex)
-                    Spacer(minLength: 0)
+                    PickerView(stations: viewModel.getStations(), labelText: "Destination", selectedOptionIndex: $selectedDestinationIndex)
                 }
+                .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
                 
                 // Start date
                 DatePicker("Start date",
                         selection: $startDate, displayedComponents: [.date, .hourAndMinute])
-                .padding()
+                .padding(.init(top: 0, leading: 45, bottom: 0, trailing: 20))
                 
                 // End date
                 DatePicker("End date",
                         selection: $endDate, displayedComponents: [.date, .hourAndMinute])
-                .padding()
+                .padding(.init(top: 0, leading: 45, bottom: 0, trailing: 20))
                 
                 Button("Check for crazy fans")
                 {
@@ -72,11 +74,12 @@ struct UserInputView: View {
                     }
                     
                 }.errorAlert(error: $viewModel.error)
-                .padding()
-            }.navigationDestination(for: String.self) { result in
+                    .buttonStyle(.myPrimaryButtonStyle)
+            }
+            .navigationDestination(for: String.self) { result in
                 ResultView(result: result)
             }
-        }
+        }.accentColor(Color.primary)
     }
 }
 
