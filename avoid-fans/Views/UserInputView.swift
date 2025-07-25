@@ -45,12 +45,12 @@ struct UserInputView: View {
                 // Start date
                 DatePicker("Start date",
                         selection: $startDate, displayedComponents: [.date, .hourAndMinute])
-                .padding()
+                .padding(.init(top: 0, leading: 45, bottom: 0, trailing: 20))
                 
                 // End date
                 DatePicker("End date",
                         selection: $endDate, displayedComponents: [.date, .hourAndMinute])
-                .padding()
+                .padding(.init(top: 0, leading: 45, bottom: 0, trailing: 20))
                 
                 Button("Check for crazy fans")
                 {
@@ -75,10 +75,11 @@ struct UserInputView: View {
                     
                 }.errorAlert(error: $viewModel.error)
                     .buttonStyle(.myPrimaryButtonStyle)
-            }.navigationDestination(for: String.self) { result in
+            }
+            .navigationDestination(for: String.self) { result in
                 ResultView(result: result)
             }
-        }
+        }.accentColor(Color.primary)
     }
 }
 

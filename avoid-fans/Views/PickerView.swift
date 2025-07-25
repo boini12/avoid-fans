@@ -26,7 +26,7 @@ struct PickerView: View {
                 .frame(maxWidth: .infinity)
         }
         .padding()
-        .background(RoundedRectangle(cornerRadius: 10).stroke(Color.accentColor, lineWidth: 1))
+        .background(RoundedRectangle(cornerRadius: 10).stroke(Color.primary, lineWidth: 1))
     }
 }
 
