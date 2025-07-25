@@ -8,26 +8,33 @@ import SwiftUI
 
 struct PickerView: View {
     let stations: [String]
+    let labelText: String
     @Binding var selectedOptionIndex: Int
 
     var body: some View {
-            VStack {
-                Picker("Select a station", selection: $selectedOptionIndex) {
+        HStack {
+            Text(labelText)
+                .padding(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Picker("Select a station", selection: $selectedOptionIndex) {
                     ForEach(0..<stations.count, id: \.self) { index in
-                            Text(stations[index]).tag(index)
+                            Text(stations[index])
                         }
                 }
-            }
-            .frame(width: 150, height: 30)
-            .background(Color(UIColor.lightGray).opacity(0.4))
-            .cornerRadius(20)
+                .pickerStyle(.menu)
+                .accentColor(.white)
+                .frame(maxWidth: .infinity)
         }
+        .padding()
+        .background(RoundedRectangle(cornerRadius: 10).stroke(Color.accentColor, lineWidth: 1))
     }
+}
 
 struct PickerView_Previews: PreviewProvider {
     static var previews: some View {
         let stations = ["Hamburg", "Munich", "Cologne", "Berlin"]
+        let labelText = "Origin"
         @State var index = 0;
-        PickerView(stations: stations, selectedOptionIndex: $index)
+        PickerView(stations: stations, labelText: labelText, selectedOptionIndex: $index)
     }
 }
