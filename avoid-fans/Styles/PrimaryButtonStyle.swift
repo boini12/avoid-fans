@@ -13,7 +13,7 @@ struct PrimaryButtonStyle : ButtonStyle {
         configuration.label
             .padding(EdgeInsets(top: 5, leading: 15, bottom: 5, trailing: 15))
             .buttonStyle(.borderedProminent)
-            .background(Color(.primary))
+            .background(Color("primaryColor"))
             .bold()
             .clipShape(Capsule(style: .continuous))
             .controlSize(.mini)
