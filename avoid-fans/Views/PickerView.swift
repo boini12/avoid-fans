@@ -22,7 +22,7 @@ struct PickerView: View {
                         }
                 }
                 .pickerStyle(.menu)
-                .accentColor(.white)
+                .accentColor(Color("headerColor"))
                 .frame(maxWidth: .infinity)
         }
         .padding()
