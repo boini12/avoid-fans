@@ -44,6 +44,19 @@
             default = "YES">
          </TestPlanReference>
       </TestPlans>
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "82858AEA2E34EDAB0043F0FA"
+               BuildableName = "avoid-fansUITests.xctest"
+               BlueprintName = "avoid-fansUITests"
+               ReferencedContainer = "container:avoid-fans.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"

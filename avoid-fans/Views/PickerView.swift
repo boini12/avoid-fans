@@ -22,11 +22,11 @@ struct PickerView: View {
                         }
                 }
                 .pickerStyle(.menu)
-                .accentColor(.white)
+                .accentColor(Color("headerColor"))
                 .frame(maxWidth: .infinity)
         }
         .padding()
-        .background(RoundedRectangle(cornerRadius: 10).stroke(Color.primary, lineWidth: 1))
+        .background(RoundedRectangle(cornerRadius: 10).stroke(Color("primaryColor"), lineWidth: 1))
     }
 }
 
