@@ -17,8 +17,9 @@ class UserInput : ObservableObject
     @Published var destinationIndex: Int
     
     init() {
-        self.startDate = Date.now
-        self.endDate = Date.now
+        let now = Date.now
+        self.startDate = now
+        self.endDate = now
         self.originIndex = 0
         self.destinationIndex = 1
     }
