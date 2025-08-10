@@ -8,6 +8,9 @@
 import SwiftUI
 
 final class UserInputViewModel : ObservableObject {
+    private let SoccerAPIService: SoccerAPIService
+    private let MatchCheckerService : MatchCheckerService
+    
     @Published var title: String = ""
     @Published var error: Swift.Error? = nil
     

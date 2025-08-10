@@ -1,13 +1,13 @@
 //
-//  APIDataController.swift
+//  MatchCheckerService.swift
 //  avoid-fans
 //
-//  Created by Ines Bohr on 19.07.25.
+//  Created by Ines Bohr on 10.08.25.
 //
 
 import Foundation
 
-struct APIDataController {
+class MatchCheckerService {
     private var matches: [Match] = []
     private var converter = StringToDateConverter()
     
@@ -17,7 +17,6 @@ struct APIDataController {
     
     public func checkForMatches(startDate: Date, endDate: Date) -> Bool {
         for match in matches {
-            // unwrap optional parameter to ensure it is not nil
             if let matchDate = converter.convert(input: match.matchDateTime) as Date? {
                 if matchDate >= startDate && matchDate <= endDate {
                     return true
@@ -26,5 +25,4 @@ struct APIDataController {
         }
         return false
     }
-        
 }

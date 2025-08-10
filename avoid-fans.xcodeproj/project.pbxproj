@@ -11,10 +11,11 @@
 		822B2BF12E2D3712005C823D /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B2BF02E2D370E005C823D /* ValidationError.swift */; };
 		822B2BF32E2D37DE005C823D /* ValidationErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B2BF22E2D37D9005C823D /* ValidationErrorType.swift */; };
 		82ACC6DB2E2AC59900833A41 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACC6DA2E2AC59400833A41 /* PickerView.swift */; };
+		82C448B32E48FE4400DE0AE5 /* SoccerAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C448B22E48FE4400DE0AE5 /* SoccerAPIService.swift */; };
+		82C448B62E48FF2700DE0AE5 /* MatchCheckerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C448B52E48FF2700DE0AE5 /* MatchCheckerService.swift */; };
 		82F696432E2B84D800949282 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F696422E2B84D600949282 /* Match.swift */; };
 		82F696452E2B84FA00949282 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F696442E2B84F800949282 /* Team.swift */; };
 		82F696472E2B853F00949282 /* MatchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F696462E2B853C00949282 /* MatchResult.swift */; };
-		82F696492E2B892400949282 /* APIDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82F696482E2B891300949282 /* APIDataController.swift */; };
 		82FD1C1E2E2D1B3B00FCE8F8 /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD1C1D2E2D1B3800FCE8F8 /* UserInput.swift */; };
 		82FD1C242E2D207200FCE8F8 /* ValidationAlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FD1C232E2D206B00FCE8F8 /* ValidationAlertError.swift */; };
 		B0AE80A42A98C6B300EA557E /* avoid_fansApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0AE80A32A98C6B300EA557E /* avoid_fansApp.swift */; };
@@ -48,10 +49,11 @@
 		824F142E2E2ECFC1008651F6 /* avoid-fans.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "avoid-fans.xctestplan"; sourceTree = "<group>"; };
 		82858AEB2E34EDAB0043F0FA /* avoid-fansUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "avoid-fansUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82ACC6DA2E2AC59400833A41 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		82C448B22E48FE4400DE0AE5 /* SoccerAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerAPIService.swift; sourceTree = "<group>"; };
+		82C448B52E48FF2700DE0AE5 /* MatchCheckerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCheckerService.swift; sourceTree = "<group>"; };
 		82F696422E2B84D600949282 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		82F696442E2B84F800949282 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		82F696462E2B853C00949282 /* MatchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchResult.swift; sourceTree = "<group>"; };
-		82F696482E2B891300949282 /* APIDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataController.swift; sourceTree = "<group>"; };
 		82FD1C1D2E2D1B3800FCE8F8 /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
 		82FD1C232E2D206B00FCE8F8 /* ValidationAlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationAlertError.swift; sourceTree = "<group>"; };
 		82FD1C2A2E2D2D2200FCE8F8 /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +67,6 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		82858AEC2E34EDAB0043F0FA /* avoid-fansUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "avoid-fansUITests"; sourceTree = "<group>"; };
-		82F6963D2E2B837300949282 /* API */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = API; sourceTree = "<group>"; };
 		82F6964A2E2B8C9F00949282 /* Util */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Util; sourceTree = "<group>"; };
 		82FC26362E33FAED00A2891C /* Styles */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Styles; sourceTree = "<group>"; };
 		82FC26432E33FEDA00A2891C /* Protocol */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Protocol; sourceTree = "<group>"; };
@@ -109,6 +110,15 @@
 			path = ValidationError;
 			sourceTree = "<group>";
 		};
+		82C448B02E48FE1B00DE0AE5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				82C448B22E48FE4400DE0AE5 /* SoccerAPIService.swift */,
+				82C448B52E48FF2700DE0AE5 /* MatchCheckerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		82FD1C252E2D259700FCE8F8 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,12 +153,11 @@
 		B0AE80A22A98C6B300EA557E /* avoid-fans */ = {
 			isa = PBXGroup;
 			children = (
+				82C448B02E48FE1B00DE0AE5 /* Services */,
 				82FC26432E33FEDA00A2891C /* Protocol */,
 				82FC26362E33FAED00A2891C /* Styles */,
 				82FD1C192E2D19C100FCE8F8 /* ViewModel */,
 				82F6964A2E2B8C9F00949282 /* Util */,
-				82F6963D2E2B837300949282 /* API */,
-				B0AE80D62A98D53A00EA557E /* Controllers */,
 				B0AE80D02A98CFCE00EA557E /* Views */,
 				B0AE80CF2A98CFC400EA557E /* Models */,
 				B0AE80A32A98C6B300EA557E /* avoid_fansApp.swift */,
@@ -186,14 +195,6 @@
 				B0AE80D32A98D29800EA557E /* UserInputView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		B0AE80D62A98D53A00EA557E /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				82F696482E2B891300949282 /* APIDataController.swift */,
-			);
-			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +259,6 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				82F6963D2E2B837300949282 /* API */,
 				82F6964A2E2B8C9F00949282 /* Util */,
 				82FC26362E33FAED00A2891C /* Styles */,
 				82FC26432E33FEDA00A2891C /* Protocol */,
@@ -358,11 +358,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82C448B32E48FE4400DE0AE5 /* SoccerAPIService.swift in Sources */,
 				82FD1C1E2E2D1B3B00FCE8F8 /* UserInput.swift in Sources */,
+				82C448B62E48FF2700DE0AE5 /* MatchCheckerService.swift in Sources */,
 				82FD1C242E2D207200FCE8F8 /* ValidationAlertError.swift in Sources */,
 				82F696452E2B84FA00949282 /* Team.swift in Sources */,
 				B0AE80D42A98D29800EA557E /* UserInputView.swift in Sources */,
-				82F696492E2B892400949282 /* APIDataController.swift in Sources */,
 				82ACC6DB2E2AC59900833A41 /* PickerView.swift in Sources */,
 				B0AE80CE2A98C86F00EA557E /* ContentView.swift in Sources */,
 				82F696472E2B853F00949282 /* MatchResult.swift in Sources */,

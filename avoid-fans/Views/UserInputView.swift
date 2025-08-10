@@ -19,8 +19,6 @@ struct UserInputView: View {
     @State private var selectedDestinationIndex = 0
     @State private var navigationPath = NavigationPath()
     
-    private var apiManager = APIManager()
-    
     var body: some View {
         NavigationStack(path: $navigationPath) {
             VStack(spacing: 40){
