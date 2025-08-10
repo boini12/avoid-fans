@@ -1,13 +1,13 @@
 //
-//  APIManager.swift
+//  SoccerAPIService.swift
 //  avoid-fans
 //
-//  Created by Ines Bohr on 19.07.25.
+//  Created by Ines Bohr on 10.08.25.
 //
+
 import Foundation
 
-struct APIManager
-{
+class SoccerAPIService : SoccerAPIRequestSending {
     private let urlEndpoint = "https://api.openligadb.de/getmatchdata/bl1"
     
     public func fetchBundesligaMatches() async throws -> [Match]

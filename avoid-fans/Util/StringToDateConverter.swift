@@ -10,7 +10,11 @@ import Foundation
 struct StringToDateConverter{
     private let dateFormatter = ISO8601DateFormatter()
     
-    public func convert(input: String) -> Date? {
+    public func convertToDate(input: String) -> Date? {
         return dateFormatter.date(from: input)
+    }
+    
+    public func convertToString(input: Date) -> String {
+        return dateFormatter.string(from: input)
     }
 }
