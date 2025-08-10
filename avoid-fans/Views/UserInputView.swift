@@ -8,15 +8,11 @@
 import SwiftUI
 
 struct UserInputView: View {
-    @StateObject var viewModel = UserInputViewModel()
+    @StateObject var viewModel: UserInputViewModel = UserInputViewModel()
     
-    @State private var startDate = Date.now
-    @State private var endDate = Date.now
     @State private var fansAvoided = false
     @State private var validDates = true
     @State private var validStations = true
-    @State private var selectedOriginIndex =  0
-    @State private var selectedDestinationIndex = 0
     @State private var navigationPath = NavigationPath()
     
     var body: some View {
@@ -29,47 +25,38 @@ struct UserInputView: View {
                 HStack
                 {
                     // Origin
-                    PickerView(stations: viewModel.getStations(), labelText: "Origin", selectedOptionIndex: $selectedOriginIndex)
+                    PickerView(stations: viewModel.getStations(), labelText: "Origin", selectedOptionIndex: $viewModel.userInput.originIndex)
 
                 }
                 .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
                 HStack
                 {
                     // Destination
-                    PickerView(stations: viewModel.getStations(), labelText: "Destination", selectedOptionIndex: $selectedDestinationIndex)
+                    PickerView(stations: viewModel.getStations(), labelText: "Destination", selectedOptionIndex: $viewModel.userInput.destinationIndex)
                 }
                 .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
                 
                 // Start date
                 DatePicker("Start date",
-                        selection: $startDate, displayedComponents: [.date, .hourAndMinute])
+                           selection: $viewModel.userInput.startDate, displayedComponents: [.date, .hourAndMinute])
                 .padding(.init(top: 0, leading: 45, bottom: 0, trailing: 20))
                 
                 // End date
                 DatePicker("End date",
-                        selection: $endDate, displayedComponents: [.date, .hourAndMinute])
+                           selection: $viewModel.userInput.endDate, displayedComponents: [.date, .hourAndMinute])
                 .padding(.init(top: 0, leading: 45, bottom: 0, trailing: 20))
                 
                 Button("Check for crazy fans")
                 {
-                    let userInput = UserInput(startDate: startDate, endDate: endDate, origin: viewModel.getStations()[selectedOriginIndex], destination: viewModel.getStations()[selectedDestinationIndex])
-                    let result = viewModel.validate(input: userInput)
+                    let result = viewModel.validate()
                     
                     if(!result) {
                         return
                     }
                     
                     // Run an async task to make a request to the API
-                    Task {
-                        do{
-                            let matches =  try await apiManager.fetchBundesligaMatches()
-                            let controller = APIDataController(matches: matches)
-                            let result = controller.checkForMatches(startDate: startDate, endDate: endDate)
-                            navigationPath.append(String(result))
-                        }catch{
-                            // do nothing for now
-                        }
-                    }
+                    
+                    navigationPath.append(String(result))
                     
                 }.errorAlert(error: $viewModel.error)
                     .buttonStyle(.myPrimaryButtonStyle)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SoccerAPIService {
+class SoccerAPIService : SoccerAPIRequestSending {
     private let urlEndpoint = "https://api.openligadb.de/getmatchdata/bl1"
     
     public func fetchBundesligaMatches() async throws -> [Match]

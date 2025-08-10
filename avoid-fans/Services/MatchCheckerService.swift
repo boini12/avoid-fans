@@ -7,17 +7,12 @@
 
 import Foundation
 
-class MatchCheckerService {
-    private var matches: [Match] = []
+class MatchCheckerService : MatchChecking {
     private var converter = StringToDateConverter()
     
-    init(matches: [Match]) {
-        self.matches = matches
-    }
-    
-    public func checkForMatches(startDate: Date, endDate: Date) -> Bool {
+    public func checkForMatches(matches : [Match], startDate: Date, endDate: Date) -> Bool {
         for match in matches {
-            if let matchDate = converter.convert(input: match.matchDateTime) as Date? {
+            if let matchDate = converter.convertToDate(input: match.matchDateTime) as Date? {
                 if matchDate >= startDate && matchDate <= endDate {
                     return true
                 }

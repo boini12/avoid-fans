@@ -7,10 +7,20 @@
 
 import Foundation
 
-struct UserInput
+class UserInput : ObservableObject
 {
-    let startDate: Date
-    let endDate: Date
-    let origin: String
-    let destination: String
+    let dateFormatter = StringToDateConverter()
+    
+    @Published var startDate: Date
+    @Published var endDate: Date
+    @Published var originIndex : Int
+    @Published var destinationIndex: Int
+    
+    init() {
+        self.startDate = Date.now
+        self.endDate = Date.now
+        self.originIndex = 0
+        self.destinationIndex = 1
+    }
+    
 }
