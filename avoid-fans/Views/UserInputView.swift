@@ -25,14 +25,14 @@ struct UserInputView: View {
                 HStack
                 {
                     // Origin
-                    PickerView(stations: viewModel.getStations(), labelText: "Origin", selectedOptionIndex: $viewModel.userInput.originIndex)
+                    PickerView(stations: viewModel.getStations(), labelText: String(localized: "Origin"), selectedOptionIndex: $viewModel.userInput.originIndex)
 
                 }
                 .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
                 HStack
                 {
                     // Destination
-                    PickerView(stations: viewModel.getStations(), labelText: "Destination", selectedOptionIndex: $viewModel.userInput.destinationIndex)
+                    PickerView(stations: viewModel.getStations(), labelText: String(localized: "Destination"), selectedOptionIndex: $viewModel.userInput.destinationIndex)
                 }
                 .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
                 

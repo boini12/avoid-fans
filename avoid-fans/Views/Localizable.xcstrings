@@ -37,6 +37,16 @@
         }
       }
     },
+    "Destination" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ziel"
+          }
+        }
+      }
+    },
     "Dresden" : {
       "localizations" : {
         "de" : {
@@ -117,6 +127,46 @@
         }
       }
     },
+    "Origin" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        }
+      }
+    },
+    "Origin and destination must be different." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start und Ziel müssen unterschiedlich sein"
+          }
+        }
+      }
+    },
+    "Please select different dates." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte wähle ein anderes Datum"
+          }
+        }
+      }
+    },
+    "Please select different origin and destination." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bitte wähle ein anderen Start und/oder Ziel aus"
+          }
+        }
+      }
+    },
     "Select a station" : {
       "localizations" : {
         "de" : {
@@ -133,6 +183,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Startdatum"
+          }
+        }
+      }
+    },
+    "Start date must be before end date." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Das Startdatum muss vor dem Enddatum liegen"
           }
         }
       }
