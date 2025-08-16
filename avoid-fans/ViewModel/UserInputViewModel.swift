@@ -40,7 +40,17 @@ final class UserInputViewModel : ObservableObject {
     
     public func getStations() -> [String]
     {
-        return ["Hamburg", "Hannover", "Munich", "Cologne", "Essen", "Duisburg", "Dresden", "Berlin", "Stuttgart"]
+        return [
+                String(localized: "Hamburg"),
+                String(localized: "Hannover"),
+                String(localized: "Munich"),
+                String(localized: "Cologne"),
+                String(localized: "Essen"),
+                String(localized: "Duisburg"),
+                String(localized: "Dresden"),
+                String(localized: "Berlin"),
+                String(localized: "Stuttgart")
+            ]
     }
     
     public func checkForFans() async -> Bool {
