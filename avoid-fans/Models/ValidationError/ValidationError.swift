@@ -14,18 +14,18 @@ struct ValidationError : LocalizedError
     var errorDescription: String? {
         switch errorType {
         case .invalidDate:
-            return "Start date must be before end date."
+            return String(localized: "Start date must be before end date.")
         case .invalidStation:
-            return "Origin and destination must be different."
+            return String(localized: "Origin and destination must be different.")
         }
     }
     
     var recoverySuggestion: String? {
         switch errorType {
         case .invalidDate:
-            return "Please select different dates."
+            return String(localized: "Please select different dates.")
         case .invalidStation:
-            return "Please select different origin and destination."
+            return String(localized:"Please select different origin and destination.")
         }
     }
 }
