@@ -15,9 +15,10 @@ struct UserInputViewModelTests {
         // Arrange
         let testInstance = UserInputViewModel()
         let inputStub = createUserInputMock(sameDate: true, sameStation: false)
+        testInstance.userInput = inputStub
         
         // Act
-        let result = testInstance.validate(input: inputStub)
+        let result = testInstance.validate()
         
         // Assert
         let error = testInstance.error as? ValidationError
@@ -29,9 +30,10 @@ struct UserInputViewModelTests {
         // Arrange
         let testInstance = UserInputViewModel()
         let inputStub = createUserInputMock(sameDate: false, sameStation: true)
+        testInstance.userInput = inputStub
         
         // Act
-        let result = testInstance.validate(input: inputStub)
+        let result = testInstance.validate()
         
         // Assert
         let error = testInstance.error as? ValidationError
@@ -43,9 +45,10 @@ struct UserInputViewModelTests {
         // Arrange
         let testInstance = UserInputViewModel()
         let inputStub = createUserInputMock(sameDate: false, sameStation: false)
+        testInstance.userInput = inputStub
         
         // Act
-        let result = testInstance.validate(input: inputStub)
+        let result = testInstance.validate()
         
         // Assert
         let error = testInstance.error as? ValidationError
@@ -70,18 +73,18 @@ struct UserInputViewModelTests {
         let startDate = createDate(year: 2025, month: 07, day: 14, hour: 3, minute: 25)
         let endDate = createDate(year: 2025, month: 07, day: 20, hour: 4, minute: 13)
         
-        let origin = "Hamburg"
-        let destination = "Berlin"
+        let origin = 0
+        let destination = 1
         
         if (sameDate) {
-            return UserInput(startDate: startDate!, endDate: startDate!, origin: origin, destination: destination)
+            return UserInput(startDate: startDate!, endDate: startDate!, originIndex: origin, destinationIndex: destination)
         }
         
         if (sameStation) {
-            return UserInput(startDate: startDate!, endDate: endDate!, origin: origin, destination: origin)
+            return UserInput(startDate: startDate!, endDate: endDate!, originIndex: origin, destinationIndex: origin)
         }
         
-        return UserInput(startDate: startDate!, endDate: endDate!, origin: origin, destination: destination)
+        return UserInput(startDate: startDate!, endDate: endDate!, originIndex: origin, destinationIndex: destination)
     }
     
     private func createDate(year: Int, month: Int, day: Int, hour: Int, minute: Int) -> Date? {

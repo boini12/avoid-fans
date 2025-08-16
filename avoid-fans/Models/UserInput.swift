@@ -24,4 +24,11 @@ class UserInput : ObservableObject
         self.destinationIndex = 1
     }
     
+    init(startDate: Date, endDate: Date, originIndex: Int, destinationIndex: Int) {
+            self.startDate = startDate
+            self.endDate = endDate
+            self.originIndex = originIndex
+            self.destinationIndex = destinationIndex
+        }
+    
 }
