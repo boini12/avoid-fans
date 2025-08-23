@@ -1,11 +1,24 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "✅" : {
 
     },
     "❌" : {
 
+    },
+    "Arrival" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abfahrt"
+          }
+        }
+      }
     },
     "Berlin" : {
       "localizations" : {
@@ -33,6 +46,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Köln"
+          }
+        }
+      }
+    },
+    "Departure" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ankunft"
           }
         }
       }
@@ -67,16 +90,6 @@
         }
       }
     },
-    "End date" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enddatum"
-          }
-        }
-      }
-    },
     "Enter your travel details and find out if any fans are taking your train!" : {
       "localizations" : {
         "de" : {
@@ -93,6 +106,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Essen"
+          }
+        }
+      }
+    },
+    "Frankfurt" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frankfurt"
           }
         }
       }
@@ -148,6 +171,7 @@
       }
     },
     "Please select different dates." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -177,17 +201,8 @@
         }
       }
     },
-    "Start date" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Startdatum"
-          }
-        }
-      }
-    },
     "Start date must be before end date." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

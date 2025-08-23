@@ -15,7 +15,7 @@ class SoccerAPIService : SoccerAPIRequestSending {
         // the underscore reflects the url response here
         // right now I'm just discarding it
         // todo: This should be adjusted in the future to check the respone
-        let (data, _) = try await URLSession.shared.data(from: URL(string: urlEndpoint)!)
+        let (data, response) = try await URLSession.shared.data(from: URL(string: urlEndpoint)!)
         let matches = try JSONDecoder().decode([Match].self, from: data)
         return matches
     }

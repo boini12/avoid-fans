@@ -6,6 +6,5 @@
 //
 
 enum ValidationErrorType {
-    case invalidDate
     case invalidStation
 }

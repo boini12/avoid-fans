@@ -22,45 +22,41 @@ struct UserInputView: View {
                     .textStyle(HeaderTextStyle())
                     .multilineTextAlignment(.center)
                 
-                HStack
-                {
-                    // Origin
-                    PickerView(stations: viewModel.getStations(), labelText: String(localized: "Origin"), selectedOptionIndex: $viewModel.userInput.originIndex)
+                    PickerView(
+                        stations: viewModel.getStations(),
+                        labelText: String(localized: "Origin"),
+                        selectedOptionIndex: $viewModel.userInput.originIndex)
 
+                    PickerView(
+                        stations: viewModel.getStations(),
+                        labelText: String(localized: "Destination"),
+                        selectedOptionIndex: $viewModel.userInput.destinationIndex)
+
+                HStack {
+                    Picker("", selection: $viewModel.userInput.journeyTimeSelection) {
+                        Text("Departure").tag(JourneyTimeSelection.Departure)
+                        Text("Arrival").tag(JourneyTimeSelection.Arrival)
+                    }
+
+                    DatePicker("",
+                               selection: $viewModel.userInput.travelDate,
+                               displayedComponents: [.date, .hourAndMinute])
                 }
-                .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
-                HStack
-                {
-                    // Destination
-                    PickerView(stations: viewModel.getStations(), labelText: String(localized: "Destination"), selectedOptionIndex: $viewModel.userInput.destinationIndex)
-                }
-                .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
-                
-                // Start date
-                DatePicker("Start date",
-                           selection: $viewModel.userInput.startDate, displayedComponents: [.date, .hourAndMinute])
-                .padding(.init(top: 0, leading: 45, bottom: 0, trailing: 20))
-                
-                // End date
-                DatePicker("End date",
-                           selection: $viewModel.userInput.endDate, displayedComponents: [.date, .hourAndMinute])
-                .padding(.init(top: 0, leading: 45, bottom: 0, trailing: 20))
-                
+
                 Button("Check for crazy fans")
                 {
-                    let result = viewModel.validate()
+                    let validationResult = viewModel.validate()
                     
-                    if(!result) {
-                        return
+                    guard validationResult else { return }
+                    Task {
+                        let result = try await viewModel.checkIfJourneyExists()
+                        
+                        navigationPath.append(String(result))
                     }
-                    
-                    // Run an async task to make a request to the API
-                    
-                    navigationPath.append(String(result))
-                    
                 }.errorAlert(error: $viewModel.error)
                     .buttonStyle(.myPrimaryButtonStyle)
             }
+            .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
             .navigationDestination(for: String.self) { result in
                 ResultView(result: result)
             }
