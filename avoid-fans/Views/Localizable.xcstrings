@@ -7,6 +7,16 @@
     "❌" : {
 
     },
+    "Arrival" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abfahrt"
+          }
+        }
+      }
+    },
     "Berlin" : {
       "localizations" : {
         "de" : {
@@ -33,6 +43,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Köln"
+          }
+        }
+      }
+    },
+    "Departure" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ankunft"
           }
         }
       }
@@ -67,16 +87,6 @@
         }
       }
     },
-    "End date" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enddatum"
-          }
-        }
-      }
-    },
     "Enter your travel details and find out if any fans are taking your train!" : {
       "localizations" : {
         "de" : {
@@ -93,6 +103,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Essen"
+          }
+        }
+      }
+    },
+    "Frankfurt" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frankfurt"
           }
         }
       }
@@ -173,16 +193,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wähle einen Bahnhof"
-          }
-        }
-      }
-    },
-    "Start date" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Startdatum"
           }
         }
       }

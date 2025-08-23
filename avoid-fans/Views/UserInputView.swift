@@ -37,27 +37,26 @@ struct UserInputView: View {
                 .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
                 
                 // Start date
-                DatePicker("Start date",
+                DatePicker("Departure",
                            selection: $viewModel.userInput.startDate, displayedComponents: [.date, .hourAndMinute])
                 .padding(.init(top: 0, leading: 45, bottom: 0, trailing: 20))
                 
                 // End date
-                DatePicker("End date",
+                DatePicker("Arrival",
                            selection: $viewModel.userInput.endDate, displayedComponents: [.date, .hourAndMinute])
                 .padding(.init(top: 0, leading: 45, bottom: 0, trailing: 20))
                 
                 Button("Check for crazy fans")
                 {
-                    let result = viewModel.validate()
+                    let validationResult = viewModel.validate()
                     
-                    if(!result) {
-                        return
+                    guard validationResult else { return }
+
+                    Task {
+                        let result = try await viewModel.checkForFans()
+                        
+                        navigationPath.append(String(result))
                     }
-                    
-                    // Run an async task to make a request to the API
-                    
-                    navigationPath.append(String(result))
-                    
                 }.errorAlert(error: $viewModel.error)
                     .buttonStyle(.myPrimaryButtonStyle)
             }

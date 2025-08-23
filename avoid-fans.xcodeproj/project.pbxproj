@@ -12,6 +12,9 @@
 		822B2BF32E2D37DE005C823D /* ValidationErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B2BF22E2D37D9005C823D /* ValidationErrorType.swift */; };
 		828BCB872E510D9A00C771C8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 828BCB862E510D9A00C771C8 /* Localizable.xcstrings */; };
 		82ACC6DB2E2AC59900833A41 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACC6DA2E2AC59400833A41 /* PickerView.swift */; };
+		82B583AF2E59C8D900FB0DAB /* TrainAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B583AE2E59C8D900FB0DAB /* TrainAPIService.swift */; };
+		82B583B12E59C91500FB0DAB /* TrainAPIRequestSending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B583B02E59C90C00FB0DAB /* TrainAPIRequestSending.swift */; };
+		82B583B32E59D60B00FB0DAB /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B583B22E59D5F400FB0DAB /* Station.swift */; };
 		82C448B32E48FE4400DE0AE5 /* SoccerAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C448B22E48FE4400DE0AE5 /* SoccerAPIService.swift */; };
 		82C448B62E48FF2700DE0AE5 /* MatchCheckerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C448B52E48FF2700DE0AE5 /* MatchCheckerService.swift */; };
 		82C448E52E49083700DE0AE5 /* SoccerAPIRequestSending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C448E42E49083700DE0AE5 /* SoccerAPIRequestSending.swift */; };
@@ -53,6 +56,9 @@
 		82858AEB2E34EDAB0043F0FA /* avoid-fansUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "avoid-fansUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		828BCB862E510D9A00C771C8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		82ACC6DA2E2AC59400833A41 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		82B583AE2E59C8D900FB0DAB /* TrainAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAPIService.swift; sourceTree = "<group>"; };
+		82B583B02E59C90C00FB0DAB /* TrainAPIRequestSending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAPIRequestSending.swift; sourceTree = "<group>"; };
+		82B583B22E59D5F400FB0DAB /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		82C448B22E48FE4400DE0AE5 /* SoccerAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerAPIService.swift; sourceTree = "<group>"; };
 		82C448B52E48FF2700DE0AE5 /* MatchCheckerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCheckerService.swift; sourceTree = "<group>"; };
 		82C448E42E49083700DE0AE5 /* SoccerAPIRequestSending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerAPIRequestSending.swift; sourceTree = "<group>"; };
@@ -118,10 +124,12 @@
 		82C448B02E48FE1B00DE0AE5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				82B583B02E59C90C00FB0DAB /* TrainAPIRequestSending.swift */,
 				82C448B22E48FE4400DE0AE5 /* SoccerAPIService.swift */,
 				82C448B52E48FF2700DE0AE5 /* MatchCheckerService.swift */,
 				82C448E42E49083700DE0AE5 /* SoccerAPIRequestSending.swift */,
 				82C448E82E4908EB00DE0AE5 /* MatchChecking.swift */,
+				82B583AE2E59C8D900FB0DAB /* TrainAPIService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -129,6 +137,7 @@
 		82FD1C252E2D259700FCE8F8 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				82B583B22E59D5F400FB0DAB /* Station.swift */,
 				82F696462E2B853C00949282 /* MatchResult.swift */,
 				82F696442E2B84F800949282 /* Team.swift */,
 				82F696422E2B84D600949282 /* Match.swift */,
@@ -368,14 +377,17 @@
 			files = (
 				82C448B32E48FE4400DE0AE5 /* SoccerAPIService.swift in Sources */,
 				82FD1C1E2E2D1B3B00FCE8F8 /* UserInput.swift in Sources */,
+				82B583B12E59C91500FB0DAB /* TrainAPIRequestSending.swift in Sources */,
 				82C448B62E48FF2700DE0AE5 /* MatchCheckerService.swift in Sources */,
 				82FD1C242E2D207200FCE8F8 /* ValidationAlertError.swift in Sources */,
 				82F696452E2B84FA00949282 /* Team.swift in Sources */,
+				82B583AF2E59C8D900FB0DAB /* TrainAPIService.swift in Sources */,
 				B0AE80D42A98D29800EA557E /* UserInputView.swift in Sources */,
 				82ACC6DB2E2AC59900833A41 /* PickerView.swift in Sources */,
 				B0AE80CE2A98C86F00EA557E /* ContentView.swift in Sources */,
 				82F696472E2B853F00949282 /* MatchResult.swift in Sources */,
 				82C448E92E4908EB00DE0AE5 /* MatchChecking.swift in Sources */,
+				82B583B32E59D60B00FB0DAB /* Station.swift in Sources */,
 				822B2BF32E2D37DE005C823D /* ValidationErrorType.swift in Sources */,
 				822B2BF12E2D3712005C823D /* ValidationError.swift in Sources */,
 				821A04212E315603000C8069 /* ResultView.swift in Sources */,

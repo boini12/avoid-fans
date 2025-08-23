@@ -8,7 +8,7 @@
 import Foundation
 
 class MatchCheckerService : MatchChecking {
-    private var converter = StringToDateConverter()
+    private let converter = StringToDateConverter()
     
     public func checkForMatches(matches : [Match], startDate: Date, endDate: Date) -> Bool {
         for match in matches {

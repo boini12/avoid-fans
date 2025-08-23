@@ -10,16 +10,22 @@ import SwiftUI
 final class UserInputViewModel : ObservableObject {
     @Injected(\.soccerAPIService) var soccerApiService: SoccerAPIRequestSending
     @Injected(\.matchCheckerService) var matchCheckerService : MatchChecking
+    @Injected(\.trainAPIService) var trainAPIService: TrainAPIRequestSending
     
     @Published var userInput: UserInput
-    
     @Published var title: String
     @Published var error: Swift.Error?
+    
+    private var originId: String
+    private var destinationId: String
     
     init() {
         self.userInput = UserInput()
         title = ""
         error = nil
+        
+        originId = ""
+        destinationId = ""
     }
     
     public func validate() -> Bool
@@ -49,14 +55,27 @@ final class UserInputViewModel : ObservableObject {
                 String(localized: "Duisburg"),
                 String(localized: "Dresden"),
                 String(localized: "Berlin"),
-                String(localized: "Stuttgart")
+                String(localized: "Stuttgart"),
+                String(localized: "Frankfurt")
             ]
     }
     
-    public func checkForFans() async -> Bool {
+    public func checkForFans() async throws-> Bool {
         do{
+            // get ids of selected origin and destination station
+            try await getStationIds()
+            
+            // check if there is any journey for the selected stations and time frame
+            let journeyFound = try await trainAPIService.getJourney(from: originId, to: destinationId, departure: userInput.startDate, arrival: userInput.endDate)
+            
+            // todo: handle this in a better way
+            guard journeyFound else {
+                return false
+            }
+            
             let matches =  try await soccerApiService.fetchBundesligaMatches()
             
+            // todo: check the place as well and not just date
             let result = matchCheckerService.checkForMatches(
                 matches: matches,
                 startDate: userInput.startDate,
@@ -82,6 +101,11 @@ final class UserInputViewModel : ObservableObject {
             return false;
         }
         return true;
+    }
+    
+    private func getStationIds() async throws -> Void {
+        self.originId = try await trainAPIService.getId(station: getStations()[userInput.originIndex])
+        self.destinationId = try await trainAPIService.getId(station: getStations()[userInput.destinationIndex])
     }
     
 }
