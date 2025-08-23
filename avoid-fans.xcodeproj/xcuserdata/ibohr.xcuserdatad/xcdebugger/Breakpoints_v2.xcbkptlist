@@ -8,124 +8,46 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2EA05C4A-61EA-49D9-AA62-CFC9AF7E5B24"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "avoid-fans/Views/UserInputView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "2EA05C4A-61EA-49D9-AA62-CFC9AF7E5B24 - d68faed4529c78bc"
+                  uuid = "2EA05C4A-61EA-49D9-AA62-CFC9AF7E5B24 - 92dd662719c2ec57"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 () async throws -&gt; () in closure #3 @Swift.MainActor () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.multilineTextAlignment(SwiftUI.TextAlignment) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationDestination&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_1_0: Swift.Hashable, &#x3c4;_1_1: SwiftUI.View&gt;(for: &#x3c4;_1_0.Type, destination: (&#x3c4;_1_0) -&gt; &#x3c4;_1_1) -&gt; some&gt;&gt;.0 in avoid_fans.UserInputView.body.getter : some"
+                  symbolName = "(1) suspend resume partial function for closure #1 () async throws -&gt; () in closure #2 @Swift.MainActor () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.multilineTextAlignment(SwiftUI.TextAlignment) -&gt; some&gt;&gt;.0, avoid_fans.PickerView, avoid_fans.PickerView, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Picker&lt;SwiftUI.Text, avoid_fans.JourneyTimeSelection, SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.tag&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: &#x3c4;_1_0, includeOptional: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.tag&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: &#x3c4;_1_0, includeOptional: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.DatePicker&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationDestination&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_1_0: Swift.Hashable, &#x3c4;_1_1: SwiftUI.View&gt;(for: &#x3c4;_1_0.Type, destination: (&#x3c4;_1_0) -&gt; &#x3c4;_1_1) -&gt; some&gt;&gt;.0 in avoid_fans.UserInputView.body.getter : some"
                   moduleName = "avoid-fans.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ibohr/Documents/dev/avoid-fans/avoid-fans/Views/UserInputView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56">
+                  startingLineNumber = "52"
+                  endingLineNumber = "52">
                </Location>
                <Location
-                  uuid = "2EA05C4A-61EA-49D9-AA62-CFC9AF7E5B24 - e1587798da9a66bb"
+                  uuid = "2EA05C4A-61EA-49D9-AA62-CFC9AF7E5B24 - 7eaf3ec7c0b0bca"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 () async throws -&gt; () in closure #3 @Swift.MainActor () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.multilineTextAlignment(SwiftUI.TextAlignment) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.EdgeInsets) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationDestination&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_1_0: Swift.Hashable, &#x3c4;_1_1: SwiftUI.View&gt;(for: &#x3c4;_1_0.Type, destination: (&#x3c4;_1_0) -&gt; &#x3c4;_1_1) -&gt; some&gt;&gt;.0 in avoid_fans.UserInputView.body.getter : some"
+                  symbolName = "(4) suspend resume partial function for closure #1 () async throws -&gt; () in closure #2 @Swift.MainActor () -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.multilineTextAlignment(SwiftUI.TextAlignment) -&gt; some&gt;&gt;.0, avoid_fans.PickerView, avoid_fans.PickerView, SwiftUI.HStack&lt;SwiftUI.TupleView&lt;(SwiftUI.Picker&lt;SwiftUI.Text, avoid_fans.JourneyTimeSelection, SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.tag&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: &#x3c4;_1_0, includeOptional: Swift.Bool) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.tag&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Hashable&gt;(_: &#x3c4;_1_0, includeOptional: Swift.Bool) -&gt; some&gt;&gt;.0)&gt;&gt;, SwiftUI.DatePicker&lt;SwiftUI.Text&gt;)&gt;&gt;, &lt;&lt;opaque return type of SwiftUI.View.buttonStyle&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.ButtonStyle&gt;(&#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationDestination&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_1_0: Swift.Hashable, &#x3c4;_1_1: SwiftUI.View&gt;(for: &#x3c4;_1_0.Type, destination: (&#x3c4;_1_0) -&gt; &#x3c4;_1_1) -&gt; some&gt;&gt;.0 in avoid_fans.UserInputView.body.getter : some"
                   moduleName = "avoid-fans.debug.dylib"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/ibohr/Documents/dev/avoid-fans/avoid-fans/Views/UserInputView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56">
+                  startingLineNumber = "52"
+                  endingLineNumber = "52">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DC8F3D90-03B6-49B9-A072-3B28BEBF04AE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "avoid-fans/Views/UserInputView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "69F8B9E7-4986-410B-B990-0E89B9479B5B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "avoid-fans/ViewModel/UserInputViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "checkForFans()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "69F8B9E7-4986-410B-B990-0E89B9479B5B - cfd158ea23439acd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "avoid_fans.UserInputViewModel.checkForFans() async throws -&gt; Swift.Bool"
-                  moduleName = "avoid-fans.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ibohr/Documents/dev/avoid-fans/avoid-fans/ViewModel/UserInputViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66">
-               </Location>
-               <Location
-                  uuid = "69F8B9E7-4986-410B-B990-0E89B9479B5B - bd5fedf78dac5775"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(7) suspend resume partial function for avoid_fans.UserInputViewModel.checkForFans() async throws -&gt; Swift.Bool"
-                  moduleName = "avoid-fans.debug.dylib"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ibohr/Documents/dev/avoid-fans/avoid-fans/ViewModel/UserInputViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0D7C6689-B928-4390-8466-49B64078CF16"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "avoid-fans/Services/TrainAPIService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "getJourney(from:to:departure:arrival:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

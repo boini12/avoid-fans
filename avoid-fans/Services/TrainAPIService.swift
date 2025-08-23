@@ -39,13 +39,14 @@ class TrainAPIService : TrainAPIRequestSending {
         return id
     }
     
-    func getJourney(from: String, to: String, departure: Date, arrival: Date) async throws -> Bool {
+    func getJourney(from: String, to: String, journeyTimeSelection: JourneyTimeSelection, travelDate: Date) async throws -> Bool {
         var urlComponents = URLComponents(string: "\(urlEndpoint)/journeys")!
+        let journeyTimeSelectionKey = createJourneyTimeSelectionKey(journeyTimeSelection: journeyTimeSelection)
+        
         let params = [
             "from": from,
             "to": to,
-            "departure" : converter.convertToString(input: departure),
-            "arrival" : converter.convertToString(input: arrival),
+            journeyTimeSelectionKey: ISO8601DateFormatter().string(from: Date()),
             "nationExpress": "true",
             "national": "false",
             "regionalExpress" : "false",
@@ -73,15 +74,20 @@ class TrainAPIService : TrainAPIRequestSending {
         
         let (data, _) = try await URLSession.shared.data(from: url)
         
-        let journeys = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [[String: Any]]
-        
+        let journeys = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any]
         
         let journeyObj = journeys?.first
         
-        guard journeyObj != nil else {
-            return false
-        }
-        
-        return true
+        return journeyObj != nil ? true : false
+    }
+    
+    private func createJourneyTimeSelectionKey(journeyTimeSelection: JourneyTimeSelection) -> String {
+        switch journeyTimeSelection {
+            case .Departure:
+                return "departure"
+                
+            case .Arrival:
+                return "arrival"
+            }
     }
 }

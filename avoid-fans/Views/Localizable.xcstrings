@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "✅" : {
 
     },
@@ -168,6 +171,7 @@
       }
     },
     "Please select different dates." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -198,6 +202,7 @@
       }
     },
     "Start date must be before end date." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

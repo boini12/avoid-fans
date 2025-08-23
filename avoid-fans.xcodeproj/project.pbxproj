@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		820FAEF62E5A459F008BAB5D /* JourneyTimeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820FAEF52E5A4597008BAB5D /* JourneyTimeSelection.swift */; };
 		821A04212E315603000C8069 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821A04202E315601000C8069 /* ResultView.swift */; };
 		822B2BF12E2D3712005C823D /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B2BF02E2D370E005C823D /* ValidationError.swift */; };
 		822B2BF32E2D37DE005C823D /* ValidationErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B2BF22E2D37D9005C823D /* ValidationErrorType.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		820FAEF52E5A4597008BAB5D /* JourneyTimeSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyTimeSelection.swift; sourceTree = "<group>"; };
 		821A04202E315601000C8069 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		822B2BF02E2D370E005C823D /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 		822B2BF22E2D37D9005C823D /* ValidationErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationErrorType.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		B0AE80CF2A98CFC400EA557E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				820FAEF52E5A4597008BAB5D /* JourneyTimeSelection.swift */,
 				822B2BEF2E2D3706005C823D /* ValidationError */,
 				82FD1C252E2D259700FCE8F8 /* API */,
 				82FD1C1D2E2D1B3800FCE8F8 /* UserInput.swift */,
@@ -390,6 +393,7 @@
 				82B583B32E59D60B00FB0DAB /* Station.swift in Sources */,
 				822B2BF32E2D37DE005C823D /* ValidationErrorType.swift in Sources */,
 				822B2BF12E2D3712005C823D /* ValidationError.swift in Sources */,
+				820FAEF62E5A459F008BAB5D /* JourneyTimeSelection.swift in Sources */,
 				821A04212E315603000C8069 /* ResultView.swift in Sources */,
 				82F696432E2B84D800949282 /* Match.swift in Sources */,
 				B0AE80A42A98C6B300EA557E /* avoid_fansApp.swift in Sources */,

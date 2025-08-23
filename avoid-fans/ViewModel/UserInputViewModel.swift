@@ -30,12 +30,6 @@ final class UserInputViewModel : ObservableObject {
     
     public func validate() -> Bool
     {
-        if(!validateDates())
-        {
-            error = ValidationError(errorType: ValidationErrorType.invalidDate)
-            return false
-        }
-        
         if(!validateStation())
         {
             error = ValidationError(errorType: ValidationErrorType.invalidStation)
@@ -60,19 +54,28 @@ final class UserInputViewModel : ObservableObject {
             ]
     }
     
-    public func checkForFans() async throws-> Bool {
+    public func checkIfJourneyExists() async throws -> Bool {
         do{
-            // get ids of selected origin and destination station
+            // get the ids of the selected origin and destination station
             try await getStationIds()
             
             // check if there is any journey for the selected stations and time frame
-            let journeyFound = try await trainAPIService.getJourney(from: originId, to: destinationId, departure: userInput.startDate, arrival: userInput.endDate)
+            let journeyFound = try await trainAPIService.getJourney(
+                from: originId,
+                to: destinationId,
+                journeyTimeSelection: userInput.journeyTimeSelection,
+                travelDate: userInput.travelDate)
             
-            // todo: handle this in a better way
-            guard journeyFound else {
-                return false
-            }
+            return journeyFound
             
+        }catch{
+            return false
+        }
+    }
+    
+    public func checkForFans() async throws-> Bool {
+        /*
+        do{
             let matches =  try await soccerApiService.fetchBundesligaMatches()
             
             // todo: check the place as well and not just date
@@ -84,12 +87,8 @@ final class UserInputViewModel : ObservableObject {
         }catch{
             // do nothing for now
         }
+         */
         return true;
-    }
-    
-    private func validateDates() -> Bool
-    {
-        return userInput.startDate < userInput.endDate;
     }
     
     private func validateStation() -> Bool
