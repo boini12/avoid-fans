@@ -9,7 +9,7 @@ import Foundation
 
 protocol TrainAPIRequestSending {
     func getId(station: String) async throws -> String
-    func getJourney(from: String, to: String, journeyTimeSelection: JourneyTimeSelection, travelDate: Date) async throws -> Bool
+    func getJourneys(from: String, to: String, journeyTimeSelection: JourneyTimeSelection, travelDate: Date) async throws -> [Journey]
 }
 
 extension InjectedValues {

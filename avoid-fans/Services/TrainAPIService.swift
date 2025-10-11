@@ -39,18 +39,18 @@ class TrainAPIService : TrainAPIRequestSending {
         return id
     }
     
-    func getJourney(from: String, to: String, journeyTimeSelection: JourneyTimeSelection, travelDate: Date) async throws -> Bool {
+    func getJourneys(from: String, to: String, journeyTimeSelection: JourneyTimeSelection, travelDate: Date) async throws -> [Journey] {
         var urlComponents = URLComponents(string: "\(urlEndpoint)/journeys")!
         let journeyTimeSelectionKey = createJourneyTimeSelectionKey(journeyTimeSelection: journeyTimeSelection)
         
         let params = [
             "from": from,
             "to": to,
-            journeyTimeSelectionKey: ISO8601DateFormatter().string(from: Date()),
+            journeyTimeSelectionKey: ISO8601DateFormatter().string(from: travelDate),
             "nationExpress": "true",
-            "national": "false",
-            "regionalExpress" : "false",
-            "regional": "false",
+            "national": "true",
+            "regionalExpress" : "true",
+            "regional": "true",
             "suburban": "false",
             "bus": "false",
             "ferry": "false",
@@ -61,7 +61,7 @@ class TrainAPIService : TrainAPIRequestSending {
             "entrances": "false",
             "subStops": "false",
             "startWalkingWith": "false",
-            "results": "1"
+            "results": "5"
         ]
         
         urlComponents.queryItems = params.map { key, value in
@@ -74,11 +74,19 @@ class TrainAPIService : TrainAPIRequestSending {
         
         let (data, _) = try await URLSession.shared.data(from: url)
         
-        let journeys = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any]
-        
-        let journeyObj = journeys?.first
-        
-        return journeyObj != nil ? true : false
+        do {
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            let decoded = try decoder.decode(JourneyResponse.self, from: data)
+            return decoded.journeys
+        } catch {
+            // todo ensure this gets logged
+            print("Decoding failed with error: \(error)")
+            let jsonString = String(data: data, encoding: .utf8) ?? "Invalid UTF-8"
+            print("Raw JSON:\n\(jsonString)")
+            throw error
+        }
+    
     }
     
     private func createJourneyTimeSelectionKey(journeyTimeSelection: JourneyTimeSelection) -> String {

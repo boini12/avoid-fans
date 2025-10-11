@@ -60,13 +60,13 @@ final class UserInputViewModel : ObservableObject {
             try await getStationIds()
             
             // check if there is any journey for the selected stations and time frame
-            let journeyFound = try await trainAPIService.getJourney(
+            let journeyFound = try await trainAPIService.getJourneys(
                 from: originId,
                 to: destinationId,
                 journeyTimeSelection: userInput.journeyTimeSelection,
                 travelDate: userInput.travelDate)
             
-            return journeyFound
+            return !journeyFound.isEmpty
             
         }catch{
             return false
