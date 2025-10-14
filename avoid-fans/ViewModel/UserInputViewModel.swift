@@ -41,35 +41,35 @@ final class UserInputViewModel : ObservableObject {
     public func getStations() -> [String]
     {
         return [
-                String(localized: "Hamburg"),
-                String(localized: "Hannover"),
-                String(localized: "Munich"),
-                String(localized: "Cologne"),
-                String(localized: "Essen"),
-                String(localized: "Duisburg"),
-                String(localized: "Dresden"),
-                String(localized: "Berlin"),
-                String(localized: "Stuttgart"),
-                String(localized: "Frankfurt")
-            ]
+            String(localized: "Hamburg"),
+            String(localized: "Hannover"),
+            String(localized: "Munich"),
+            String(localized: "Cologne"),
+            String(localized: "Essen"),
+            String(localized: "Duisburg"),
+            String(localized: "Dresden"),
+            String(localized: "Berlin"),
+            String(localized: "Stuttgart"),
+            String(localized: "Frankfurt")
+        ]
     }
     
-    public func checkIfJourneyExists() async throws -> Bool {
+    public func findJourneys() async throws -> [Journey] {
         do{
             // get the ids of the selected origin and destination station
             try await getStationIds()
             
             // check if there is any journey for the selected stations and time frame
-            let journeyFound = try await trainAPIService.getJourneys(
+            let foundJourneys = try await trainAPIService.getJourneys(
                 from: originId,
                 to: destinationId,
                 journeyTimeSelection: userInput.journeyTimeSelection,
                 travelDate: userInput.travelDate)
             
-            return !journeyFound.isEmpty
+            return foundJourneys;
             
         }catch{
-            return false
+            return []
         }
     }
     

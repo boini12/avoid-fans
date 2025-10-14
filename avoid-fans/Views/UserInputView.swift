@@ -43,22 +43,24 @@ struct UserInputView: View {
                                displayedComponents: [.date, .hourAndMinute])
                 }
 
-                Button("Check for crazy fans")
+                Button("Find train journeys")
                 {
-                    let validationResult = viewModel.validate()
+                    guard viewModel.validate() else { return }
                     
-                    guard validationResult else { return }
                     Task {
-                        let result = try await viewModel.checkIfJourneyExists()
-                        
-                        navigationPath.append(String(result))
+                        do {
+                            let result = try await viewModel.findJourneys();
+                            navigationPath.append(result)
+                        }catch {
+                            viewModel.error = error
+                        }
                     }
                 }.errorAlert(error: $viewModel.error)
                     .buttonStyle(.myPrimaryButtonStyle)
             }
             .padding(.init(top: 0, leading: 15, bottom: 0, trailing: 15))
-            .navigationDestination(for: String.self) { result in
-                ResultView(result: result)
+            .navigationDestination(for: [Journey].self) { journeys in
+                TrainSelectionView(journeys: journeys)
             }
         }.accentColor(Color.primary)
     }

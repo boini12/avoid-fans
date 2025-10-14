@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Leg : Codable {
+struct Leg : Codable, Hashable {
     let departure: Date?
     let arrival: Date?
 }

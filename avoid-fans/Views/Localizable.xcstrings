@@ -20,6 +20,9 @@
         }
       }
     },
+    "Arrival:" : {
+
+    },
     "Berlin" : {
       "localizations" : {
         "de" : {
@@ -31,6 +34,7 @@
       }
     },
     "Check for crazy fans" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -59,6 +63,9 @@
           }
         }
       }
+    },
+    "Departure:" : {
+
     },
     "Destination" : {
       "localizations" : {
@@ -109,6 +116,9 @@
           }
         }
       }
+    },
+    "Find train journeys" : {
+
     },
     "Frankfurt" : {
       "localizations" : {
