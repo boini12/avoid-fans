@@ -9,26 +9,23 @@ import Foundation
 
 class UserInput : ObservableObject
 {
-    let dateFormatter = StringToDateConverter()
-    
-    @Published var startDate: Date
-    @Published var endDate: Date
+    let dateFormatter = DateConverter()
+    @Published var journeyTimeSelection: JourneyTimeSelection
+    @Published var travelDate: Date
     @Published var originIndex : Int
     @Published var destinationIndex: Int
     
     init() {
-        let now = Date.now
-        self.startDate = now
-        self.endDate = now
+        self.journeyTimeSelection = JourneyTimeSelection.Departure
+        self.travelDate = Date.now
         self.originIndex = 0
         self.destinationIndex = 1
     }
     
-    init(startDate: Date, endDate: Date, originIndex: Int, destinationIndex: Int) {
-            self.startDate = startDate
-            self.endDate = endDate
-            self.originIndex = originIndex
-            self.destinationIndex = destinationIndex
-        }
-    
+    init(journeyTimeSelection: JourneyTimeSelection, travelDate: Date, originIndex: Int, destinationIndex: Int) {
+        self.journeyTimeSelection = journeyTimeSelection
+        self.travelDate = travelDate
+        self.originIndex = originIndex
+        self.destinationIndex = destinationIndex
+    }
 }

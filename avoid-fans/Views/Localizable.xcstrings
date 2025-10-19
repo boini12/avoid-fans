@@ -1,10 +1,26 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "✅" : {
 
     },
     "❌" : {
+
+    },
+    "Arrival" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abfahrt"
+          }
+        }
+      }
+    },
+    "Arrival:" : {
 
     },
     "Berlin" : {
@@ -18,6 +34,7 @@
       }
     },
     "Check for crazy fans" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -36,6 +53,19 @@
           }
         }
       }
+    },
+    "Departure" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ankunft"
+          }
+        }
+      }
+    },
+    "Departure:" : {
+
     },
     "Destination" : {
       "localizations" : {
@@ -67,16 +97,6 @@
         }
       }
     },
-    "End date" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enddatum"
-          }
-        }
-      }
-    },
     "Enter your travel details and find out if any fans are taking your train!" : {
       "localizations" : {
         "de" : {
@@ -93,6 +113,19 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Essen"
+          }
+        }
+      }
+    },
+    "Find train journeys" : {
+
+    },
+    "Frankfurt" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frankfurt"
           }
         }
       }
@@ -148,6 +181,7 @@
       }
     },
     "Please select different dates." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -177,17 +211,8 @@
         }
       }
     },
-    "Start date" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Startdatum"
-          }
-        }
-      }
-    },
     "Start date must be before end date." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
