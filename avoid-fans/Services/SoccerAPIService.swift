@@ -36,7 +36,7 @@ class SoccerAPIService : SoccerAPIRequestSending {
             print("Decoding failed with error: \(error)")
             let jsonString = String(data: data, encoding: .utf8) ?? "Invalid UTF-8"
             print("Raw JSON:\n\(jsonString)")
-            throw error
+            return []
         }
     }
 }
