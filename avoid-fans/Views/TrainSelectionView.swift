@@ -11,14 +11,15 @@ struct TrainSelectionView: View {
     var journeys: [Journey]
     var dateFormatter = DateConverter()
     
-    
     var body: some View {
         List(journeys) { journey in
-            JourneyRow(journey: journey)
-                .listRowBackground(Color("backgroundColor"))
+            NavigationLink {
+                
+            } label: {
+                JourneyRow(journey: journey)
+                    .listRowBackground(Color("backgroundColor"))
+            }
         }
-        .background(Color("backgroundColor"))
-        .listRowSeparator(.hidden)
     }
 }
 
