@@ -4,12 +4,6 @@
     "" : {
 
     },
-    "✅" : {
-
-    },
-    "❌" : {
-
-    },
     "Arrival" : {
       "localizations" : {
         "de" : {
@@ -21,6 +15,16 @@
       }
     },
     "Arrival:" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ankunft:"
+          }
+        }
+      }
+    },
+    "Back to start" : {
 
     },
     "Berlin" : {
@@ -33,13 +37,12 @@
         }
       }
     },
-    "Check for crazy fans" : {
-      "extractionState" : "stale",
+    "Checking for clashes..." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suche nach Fans"
+            "value" : "Auf Konflikte prüfen…"
           }
         }
       }
@@ -65,7 +68,14 @@
       }
     },
     "Departure:" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abreise:"
+          }
+        }
+      }
     },
     "Destination" : {
       "localizations" : {
@@ -118,7 +128,14 @@
       }
     },
     "Find train journeys" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zugreisen finden"
+          }
+        }
+      }
     },
     "Frankfurt" : {
       "localizations" : {
@@ -180,17 +197,6 @@
         }
       }
     },
-    "Please select different dates." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bitte wähle ein anderes Datum"
-          }
-        }
-      }
-    },
     "Please select different origin and destination." : {
       "localizations" : {
         "de" : {
@@ -201,33 +207,22 @@
         }
       }
     },
-    "Select a station" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wähle einen Bahnhof"
-          }
-        }
-      }
-    },
-    "Start date must be before end date." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Das Startdatum muss vor dem Enddatum liegen"
-          }
-        }
-      }
-    },
     "Stuttgart" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stuttgart"
+          }
+        }
+      }
+    },
+    "Train Journeys" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zugreisen"
           }
         }
       }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MatchChecking {
-    func checkForMatches(matches : [Match], startDate: Date, endDate: Date) -> Bool
+    func checkForMatches(matches : [Event], startDate: Date, endDate: Date) -> Bool
 }
 
 extension InjectedValues {

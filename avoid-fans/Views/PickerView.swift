@@ -16,7 +16,7 @@ struct PickerView: View {
             Text(labelText)
                 .padding(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
-            Picker("Select a station", selection: $selectedOptionIndex) {
+            Picker(String("Select a station"), selection: $selectedOptionIndex) {
                     ForEach(0..<stations.count, id: \.self) { index in
                             Text(stations[index])
                         }

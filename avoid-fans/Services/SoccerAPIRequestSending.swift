@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SoccerAPIRequestSending {
-    func fetchBundesligaMatches() async throws -> [Match]
+    func fetchBundesligaMatches(for date: Date) async throws -> [Event]
 }
 
 extension InjectedValues {

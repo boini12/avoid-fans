@@ -8,18 +8,29 @@
 import SwiftUI
 
 struct ResultView: View {
-    @State var result: String = ""
+    @ObservedObject var viewModel: ResultViewModel = ResultViewModel()
+    @Binding var path : NavigationPath
+    let journey: Journey
     
     var body: some View {
-        
-        if (result == "false") {
-            VStack {
-                Text("✅")
-            }
-        }else {
-            VStack {
-                Text("❌")
-            }
-        }
+        VStack {
+          if viewModel.resultText.isEmpty {
+              Text(String(localized: "Checking for clashes..."))
+          } else {
+              Text(viewModel.resultText)
+                  .padding()
+                  
+              Button(String(localized: "Back to start")) {
+                  path = NavigationPath()
+              }
+              .buttonStyle(.myPrimaryButtonStyle)
+          }
+      }
+      .onAppear {
+          Task {
+              await viewModel.checkForClash(journey: journey)
+          }
+      }
     }
+       
 }

@@ -8,8 +8,6 @@
 import SwiftUI
 
 final class UserInputViewModel : ObservableObject {
-    @Injected(\.soccerAPIService) var soccerApiService: SoccerAPIRequestSending
-    @Injected(\.matchCheckerService) var matchCheckerService : MatchChecking
     @Injected(\.trainAPIService) var trainAPIService: TrainAPIRequestSending
     
     @Published var userInput: UserInput
@@ -71,24 +69,6 @@ final class UserInputViewModel : ObservableObject {
         }catch{
             return []
         }
-    }
-    
-    public func checkForFans() async throws-> Bool {
-        /*
-        do{
-            let matches =  try await soccerApiService.fetchBundesligaMatches()
-            
-            // todo: check the place as well and not just date
-            let result = matchCheckerService.checkForMatches(
-                matches: matches,
-                startDate: userInput.startDate,
-                endDate: userInput.endDate)
-            return result;
-        }catch{
-            // do nothing for now
-        }
-         */
-        return true;
     }
     
     private func validateStation() -> Bool

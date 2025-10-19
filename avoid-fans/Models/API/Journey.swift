@@ -8,6 +8,6 @@
 import Foundation
 
 struct Journey : Codable, Identifiable, Hashable {
-    let id = UUID()
+    let id : UUID = UUID()
     let legs: [Leg]
 }
