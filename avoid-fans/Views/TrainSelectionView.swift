@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TrainSelectionView: View {
     var journeys: [Journey]
-    var dateFormatter = StringToDateConverter()
+    var dateFormatter = DateConverter()
     
     
     var body: some View {

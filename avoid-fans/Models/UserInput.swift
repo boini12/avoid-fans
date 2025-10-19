@@ -9,7 +9,7 @@ import Foundation
 
 class UserInput : ObservableObject
 {
-    let dateFormatter = StringToDateConverter()
+    let dateFormatter = DateConverter()
     @Published var journeyTimeSelection: JourneyTimeSelection
     @Published var travelDate: Date
     @Published var originIndex : Int

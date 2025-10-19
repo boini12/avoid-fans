@@ -8,7 +8,7 @@
 import Foundation
 
 class TrainAPIService : TrainAPIRequestSending {
-    private let converter = StringToDateConverter()
+    private let converter = DateConverter()
     private let urlEndpoint: String = "https://v6.db.transport.rest"
     
     func getId(station: String) async throws -> String {

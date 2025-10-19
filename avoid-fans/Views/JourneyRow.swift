@@ -9,7 +9,7 @@ import SwiftUI
 
 struct JourneyRow: View {
     var journey: Journey
-    private let dateFormatter = StringToDateConverter()
+    private let dateFormatter = DateConverter()
     
     var body: some View {
         VStack {
@@ -17,9 +17,9 @@ struct JourneyRow: View {
                 VStack(alignment: .leading)
                 {
                     Text("Departure:")
-                    Text(dateFormatter.convertToString(input: journey.legs.first!.departure!))
+                    Text(dateFormatter.convertDateToLocaleString(input: journey.legs.first!.departure!))
                     Text("Arrival:")
-                    Text(dateFormatter.convertToString(input: journey.legs.first!.departure!))
+                    Text(dateFormatter.convertDateToLocaleString(input: journey.legs.first!.arrival!))
                 }
                 .frame(maxWidth: .infinity)
             }
