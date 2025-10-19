@@ -15,6 +15,7 @@ struct TrainSelectionView: View {
             NavigationLink(value: journey) {
                 JourneyRow(journey: journey)
             }
+            .listRowBackground(Color("backgroundColor"))
         }
         .navigationTitle("Train Journeys")
     }
