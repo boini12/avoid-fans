@@ -14,7 +14,7 @@ struct ResultView: View {
     var body: some View {
         VStack {
           if viewModel.resultText.isEmpty {
-              Text("Checking for clashes...")
+              Text(String(localized: "Checking for clashes..."))
           } else {
               Text(viewModel.resultText)
           }

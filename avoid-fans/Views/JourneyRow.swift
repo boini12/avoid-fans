@@ -16,9 +16,9 @@ struct JourneyRow: View {
             HStack {
                 VStack(alignment: .leading)
                 {
-                    Text("Departure:")
+                    Text(String(localized: "Departure:"))
                     Text(dateFormatter.convertDateToLocaleString(input: journey.legs.first!.departure!))
-                    Text("Arrival:")
+                    Text(String(localized: "Arrival:"))
                     Text(dateFormatter.convertDateToLocaleString(input: journey.legs.first!.arrival!))
                 }
                 .frame(maxWidth: .infinity)

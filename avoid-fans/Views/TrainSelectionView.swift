@@ -17,7 +17,7 @@ struct TrainSelectionView: View {
             }
             .listRowBackground(Color("backgroundColor"))
         }
-        .navigationTitle("Train Journeys")
+        .navigationTitle(String(localized: "Train Journeys"))
     }
 }
 
