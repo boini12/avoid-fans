@@ -8,5 +8,5 @@
 import Foundation
 
 struct EventResonse : Codable {
-    let event : [Event]
+    let events : [Event]
 }

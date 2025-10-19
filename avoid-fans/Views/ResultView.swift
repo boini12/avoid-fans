@@ -8,18 +8,22 @@
 import SwiftUI
 
 struct ResultView: View {
-    var viewModel: ResultViewModel = ResultViewModel()
+    @ObservedObject var viewModel: ResultViewModel = ResultViewModel()
     let journey: Journey
     
     var body: some View {
         VStack {
-            Text(viewModel.getResult())
-        }
-        .onAppear {
-            viewModel.fetchMatches(journey: journey)
-            viewModel.clashesWithAMatch(journey: journey)
-        }
-        
+          if viewModel.resultText.isEmpty {
+              Text("Checking for clashes...")
+          } else {
+              Text(viewModel.resultText)
+          }
+      }
+      .onAppear {
+          Task {
+              await viewModel.checkForClash(journey: journey)
+          }
+      }
     }
        
 }

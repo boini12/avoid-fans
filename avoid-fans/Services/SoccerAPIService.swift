@@ -8,19 +8,16 @@
 import Foundation
 
 class SoccerAPIService : SoccerAPIRequestSending {
-    private let urlEndpoint = "https://www.thesportsdb.com/api/v1/json/123/searchevents.php?"
-    private let league = "Bundesliga"
+    private let urlEndpoint = "https://www.thesportsdb.com/api/v1/json/123/eventsday.php?"
+    private let league = "German_Bundesliga"
+    private let dateConverter = DateConverter()
     
     public func fetchBundesligaMatches(for date: Date) async throws -> [Event]
     {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        let dateString = formatter.string(from: date)
-        
         var urlComponents = URLComponents(string: urlEndpoint)!
                 urlComponents.queryItems = [
-                    URLQueryItem(name: "e", value: league),
-                    URLQueryItem(name: "d", value: dateString)
+                    URLQueryItem(name: "d", value: dateConverter.convertDateToFormattedString(input: date)),
+                    URLQueryItem(name: "l", value: league)
                 ]
         
         guard let url = urlComponents.url else {
@@ -33,7 +30,7 @@ class SoccerAPIService : SoccerAPIRequestSending {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .iso8601
             let decoded = try decoder.decode(EventResonse.self, from: data)
-            return decoded.event
+            return decoded.events
         } catch {
             // todo ensure this gets logged
             print("Decoding failed with error: \(error)")
