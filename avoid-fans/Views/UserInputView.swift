@@ -58,6 +58,9 @@ struct UserInputView: View {
             .navigationDestination(for: [Journey].self) { journeys in
                 TrainSelectionView(journeys: journeys)
             }
+            .navigationDestination(for: Journey.self) { journey in
+                ResultView(journey: journey)
+            }
         }.accentColor(Color.primary)
     }
 }

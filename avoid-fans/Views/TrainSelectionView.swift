@@ -9,17 +9,14 @@ import SwiftUI
 
 struct TrainSelectionView: View {
     var journeys: [Journey]
-    var dateFormatter = DateConverter()
     
     var body: some View {
         List(journeys) { journey in
-            NavigationLink {
-                ResultView(journey: journey)
-            } label: {
+            NavigationLink(value: journey) {
                 JourneyRow(journey: journey)
-                    .listRowBackground(Color("backgroundColor"))
             }
         }
+        .navigationTitle("Train Journeys")
     }
 }
 

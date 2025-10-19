@@ -12,12 +12,20 @@ final class ResultViewModel {
     @Injected(\.matchCheckerService) var matchCheckerService : MatchChecking
     
     private var matches : [Event] = []
+    private var result : Bool = false
     
-    func clashesWithAMatch(journey: Journey) -> Bool {
+    func clashesWithAMatch(journey: Journey) -> Void {
         Task {
-            return matchCheckerService.checkForMatches(matches: matches, startDate: journey.legs.first!.arrival!, endDate: journey.legs.first!.departure!)
+            result = matchCheckerService.checkForMatches(matches: matches, startDate: journey.legs.first!.arrival!, endDate: journey.legs.first!.departure!)
         }
-        return false
+        result = false
+    }
+    
+    func getResult() -> String {
+        if result {
+            return "Your train clashes with a Bundesliga match"
+        }
+        return "Your train does not clash with a Bundesliga match"
     }
     
     func fetchMatches(journey: Journey) -> Void {
