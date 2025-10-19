@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ResultView: View {
     @ObservedObject var viewModel: ResultViewModel = ResultViewModel()
+    @Binding var path : NavigationPath
     let journey: Journey
     
     var body: some View {
@@ -17,6 +18,12 @@ struct ResultView: View {
               Text(String(localized: "Checking for clashes..."))
           } else {
               Text(viewModel.resultText)
+                  .padding()
+                  
+              Button(String(localized: "Back to start")) {
+                  path = NavigationPath()
+              }
+              .buttonStyle(.myPrimaryButtonStyle)
           }
       }
       .onAppear {

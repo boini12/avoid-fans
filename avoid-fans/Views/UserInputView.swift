@@ -59,7 +59,7 @@ struct UserInputView: View {
                 TrainSelectionView(journeys: journeys)
             }
             .navigationDestination(for: Journey.self) { journey in
-                ResultView(journey: journey)
+                ResultView(path: $navigationPath, journey: journey)
             }
         }.accentColor(Color.primary)
     }
