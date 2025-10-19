@@ -16,7 +16,7 @@ class UserInput : ObservableObject
     @Published var destinationIndex: Int
     
     init() {
-        self.journeyTimeSelection = JourneyTimeSelection.Arrival
+        self.journeyTimeSelection = JourneyTimeSelection.Departure
         self.travelDate = Date.now
         self.originIndex = 0
         self.destinationIndex = 1

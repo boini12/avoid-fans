@@ -9,10 +9,6 @@ import SwiftUI
 
 struct UserInputView: View {
     @StateObject var viewModel: UserInputViewModel = UserInputViewModel()
-    
-    @State private var fansAvoided = false
-    @State private var validDates = true
-    @State private var validStations = true
     @State private var navigationPath = NavigationPath()
     
     var body: some View {
