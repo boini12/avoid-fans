@@ -8,18 +8,23 @@
 import SwiftUI
 
 struct ResultView: View {
-    @State var result: String = ""
+    var viewModel: ResultViewModel = ResultViewModel()
+    let journey: Journey
+    
+    init(journey: Journey) {
+        self.journey = journey
+        
+        viewModel.fetchMatches(journey: journey)
+    }
     
     var body: some View {
         
-        if (result == "false") {
-            VStack {
-                Text("✅")
-            }
+        let result = viewModel.clashesWithAMatch(journey: journey)
+        
+        if result {
+            Text("Your train journey clashes with a football match.")
         }else {
-            VStack {
-                Text("❌")
-            }
+            Text("Your train journey does not clash with a football match.")
         }
     }
 }

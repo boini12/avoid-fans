@@ -4,12 +4,6 @@
     "" : {
 
     },
-    "✅" : {
-
-    },
-    "❌" : {
-
-    },
     "Arrival" : {
       "localizations" : {
         "de" : {
@@ -231,6 +225,12 @@
           }
         }
       }
+    },
+    "Your train journey clashes with a football match." : {
+
+    },
+    "Your train journey does not clash with a football match." : {
+
     }
   },
   "version" : "1.0"

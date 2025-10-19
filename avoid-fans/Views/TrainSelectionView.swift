@@ -14,7 +14,7 @@ struct TrainSelectionView: View {
     var body: some View {
         List(journeys) { journey in
             NavigationLink {
-                
+                ResultView(journey: journey)
             } label: {
                 JourneyRow(journey: journey)
                     .listRowBackground(Color("backgroundColor"))
