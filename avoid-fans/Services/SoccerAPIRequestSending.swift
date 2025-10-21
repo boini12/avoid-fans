@@ -9,6 +9,7 @@ import Foundation
 
 protocol SoccerAPIRequestSending {
     func fetchBundesligaMatches(for date: Date) async throws -> [Event]
+    func lookUpVenue(for id: String) async throws -> Venue?
 }
 
 extension InjectedValues {

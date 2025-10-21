@@ -12,11 +12,15 @@ final class ResultViewModel : ObservableObject {
     @Injected(\.matchCheckerService) var matchCheckerService : MatchChecking
     
     private var matches : [Event] = []
+    private var venues : [Venue] = []
     @Published var resultText : String = ""
     
     func checkForClash(journey: Journey) async -> Void {
         do {
             matches = try await soccerApiService.fetchBundesligaMatches(for: journey.legs.first!.departure!)
+            for match in matches {
+                venues.append(try await soccerApiService.lookUpVenue(for: match.idVenue)!)
+            }
            
            let result = isClash(journey: journey)
            
@@ -29,6 +33,6 @@ final class ResultViewModel : ObservableObject {
    }
     
     private func isClash(journey: Journey) -> Bool {
-        return matchCheckerService.checkForMatches(matches: matches, startDate: journey.legs.first!.departure!, endDate: journey.legs.first!.arrival!)
+        return matchCheckerService.checkForMatches(matches: matches, venues: venues, leg: journey.legs.last!)
     }
 }
