@@ -30,6 +30,6 @@ struct JourneyRow: View {
 }
 
 #Preview {
-    var leg = Leg(departure: Date(), arrival: Date())
+    var leg = Leg(departure: Date(), arrival: Date(), destination: nil, stopovers: [])
     JourneyRow(journey: .init(legs: [leg]))
 }

@@ -7,6 +7,6 @@
 
 struct Event : Codable {
     let dateEvent: String
-    let strCity: String?
+    let idVenue: String
     let strTime : String
 }

@@ -16,6 +16,10 @@
 		82B583AF2E59C8D900FB0DAB /* TrainAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B583AE2E59C8D900FB0DAB /* TrainAPIService.swift */; };
 		82B583B12E59C91500FB0DAB /* TrainAPIRequestSending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B583B02E59C90C00FB0DAB /* TrainAPIRequestSending.swift */; };
 		82B583B32E59D60B00FB0DAB /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B583B22E59D5F400FB0DAB /* Station.swift */; };
+		82BF0B2C2EA6B43C00ABDB13 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF0B2B2EA6B43C00ABDB13 /* Stop.swift */; };
+		82BF0B2E2EA6B44F00ABDB13 /* Stopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF0B2D2EA6B44F00ABDB13 /* Stopover.swift */; };
+		82BF0B302EA6BD4C00ABDB13 /* VenueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF0B2F2EA6BD4C00ABDB13 /* VenueResponse.swift */; };
+		82BF0B322EA6BD9B00ABDB13 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82BF0B312EA6BD9B00ABDB13 /* Venue.swift */; };
 		82C3B0C12EA5288C00AF6D65 /* EventResonse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C3B0C02EA5288C00AF6D65 /* EventResonse.swift */; };
 		82C448B32E48FE4400DE0AE5 /* SoccerAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C448B22E48FE4400DE0AE5 /* SoccerAPIService.swift */; };
 		82C448B62E48FF2700DE0AE5 /* MatchCheckerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C448B52E48FF2700DE0AE5 /* MatchCheckerService.swift */; };
@@ -67,6 +71,10 @@
 		82B583AE2E59C8D900FB0DAB /* TrainAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAPIService.swift; sourceTree = "<group>"; };
 		82B583B02E59C90C00FB0DAB /* TrainAPIRequestSending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAPIRequestSending.swift; sourceTree = "<group>"; };
 		82B583B22E59D5F400FB0DAB /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		82BF0B2B2EA6B43C00ABDB13 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
+		82BF0B2D2EA6B44F00ABDB13 /* Stopover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopover.swift; sourceTree = "<group>"; };
+		82BF0B2F2EA6BD4C00ABDB13 /* VenueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueResponse.swift; sourceTree = "<group>"; };
+		82BF0B312EA6BD9B00ABDB13 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		82C3B0C02EA5288C00AF6D65 /* EventResonse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventResonse.swift; sourceTree = "<group>"; };
 		82C448B22E48FE4400DE0AE5 /* SoccerAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoccerAPIService.swift; sourceTree = "<group>"; };
 		82C448B52E48FF2700DE0AE5 /* MatchCheckerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCheckerService.swift; sourceTree = "<group>"; };
@@ -159,6 +167,10 @@
 				82FAF7CA2E9A9161003FFCF1 /* JourneyResponse.swift */,
 				82FAF7CC2E9A9564003FFCF1 /* Leg.swift */,
 				82C3B0C02EA5288C00AF6D65 /* EventResonse.swift */,
+				82BF0B2B2EA6B43C00ABDB13 /* Stop.swift */,
+				82BF0B2D2EA6B44F00ABDB13 /* Stopover.swift */,
+				82BF0B2F2EA6BD4C00ABDB13 /* VenueResponse.swift */,
+				82BF0B312EA6BD9B00ABDB13 /* Venue.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -404,6 +416,7 @@
 				82F696452E2B84FA00949282 /* Team.swift in Sources */,
 				82B583AF2E59C8D900FB0DAB /* TrainAPIService.swift in Sources */,
 				B0AE80D42A98D29800EA557E /* UserInputView.swift in Sources */,
+				82BF0B2C2EA6B43C00ABDB13 /* Stop.swift in Sources */,
 				82ACC6DB2E2AC59900833A41 /* PickerView.swift in Sources */,
 				B0AE80CE2A98C86F00EA557E /* ContentView.swift in Sources */,
 				82F696472E2B853F00949282 /* MatchResult.swift in Sources */,
@@ -419,8 +432,11 @@
 				82FAF7C32E9A8F64003FFCF1 /* Journey.swift in Sources */,
 				82F696432E2B84D800949282 /* Event.swift in Sources */,
 				82FAF7D12E9A9A60003FFCF1 /* JourneyRow.swift in Sources */,
+				82BF0B322EA6BD9B00ABDB13 /* Venue.swift in Sources */,
 				82FAF7CD2E9A9564003FFCF1 /* Leg.swift in Sources */,
 				B0AE80A42A98C6B300EA557E /* avoid_fansApp.swift in Sources */,
+				82BF0B2E2EA6B44F00ABDB13 /* Stopover.swift in Sources */,
+				82BF0B302EA6BD4C00ABDB13 /* VenueResponse.swift in Sources */,
 				82C448E52E49083700DE0AE5 /* SoccerAPIRequestSending.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -668,7 +684,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -697,7 +713,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

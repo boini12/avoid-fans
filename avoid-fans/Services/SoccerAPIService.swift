@@ -8,13 +8,14 @@
 import Foundation
 
 class SoccerAPIService : SoccerAPIRequestSending {
-    private let urlEndpoint = "https://www.thesportsdb.com/api/v1/json/123/eventsday.php?"
+    private let urlEndpoint = "https://www.thesportsdb.com/api/v1/json/123/"
+    private let eventLookUpUrl = "eventsday.php?"
+    private let venueLookUpUrl = "lookupvenue.php?"
     private let league = "German_Bundesliga"
     private let dateConverter = DateConverter()
     
-    public func fetchBundesligaMatches(for date: Date) async throws -> [Event]
-    {
-        var urlComponents = URLComponents(string: urlEndpoint)!
+    public func fetchBundesligaMatches(for date: Date) async throws -> [Event] {
+        var urlComponents = URLComponents(string: urlEndpoint + eventLookUpUrl)!
                 urlComponents.queryItems = [
                     URLQueryItem(name: "d", value: dateConverter.convertDateToFormattedString(input: date)),
                     URLQueryItem(name: "l", value: league)
@@ -37,6 +38,32 @@ class SoccerAPIService : SoccerAPIRequestSending {
             let jsonString = String(data: data, encoding: .utf8) ?? "Invalid UTF-8"
             print("Raw JSON:\n\(jsonString)")
             return []
+        }
+    }
+    
+    func lookUpVenue(for id: String) async throws -> Venue? {
+        var urlComponents = URLComponents(string: urlEndpoint + venueLookUpUrl)!
+                urlComponents.queryItems = [
+                    URLQueryItem(name: "id", value: id)
+                ]
+        
+        guard let url = urlComponents.url else {
+                   throw URLError(.badURL)
+               }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+
+        do {
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            let decoded = try decoder.decode(VenueResponse.self, from: data)
+            return decoded.venues.first!
+        } catch {
+            // todo ensure this gets logged
+            print("Decoding failed with error: \(error)")
+            let jsonString = String(data: data, encoding: .utf8) ?? "Invalid UTF-8"
+            print("Raw JSON:\n\(jsonString)")
+            return nil
         }
     }
 }

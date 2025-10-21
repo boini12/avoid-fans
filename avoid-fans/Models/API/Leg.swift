@@ -10,4 +10,6 @@ import Foundation
 struct Leg : Codable, Hashable {
     let departure: Date?
     let arrival: Date?
+    let destination: Stop?
+    let stopovers: [Stopover]?
 }
