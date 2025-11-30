@@ -33,7 +33,7 @@
             startingLineNumber = "45"
             endingLineNumber = "45"
             landmarkName = "checkStops(matches:venues:stopovers:)"
-            landmarkType = "9">
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "D4CAC11D-5B53-417C-B89D-B9362EDA9C50 - b67cfdd3565d3847"
@@ -79,6 +79,38 @@
             startingLineNumber = "36"
             endingLineNumber = "36"
             landmarkName = "checkOriginAndDestination(matches:venues:destination:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8BB6F7A-4BBA-40F7-B00B-AAD6B8E65997"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "avoid-fans/Services/MatchCheckerService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "checkOriginAndDestination(matches:venues:destination:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58E825FA-4146-41D4-B5AE-652961C3C71F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "avoid-fans/Services/MatchCheckerService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "checkForMatches(matches:venues:leg:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
