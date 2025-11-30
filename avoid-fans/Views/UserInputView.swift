@@ -8,14 +8,8 @@
 import SwiftUI
 
 struct UserInputView: View {
-    @ObservedObject var viewModel: UserInputViewModel
-    @ObservedObject var userInput: UserInput
+    @StateObject var viewModel: UserInputViewModel = UserInputViewModel()
     @State private var navigationPath = NavigationPath()
-    
-    init(viewModel: UserInputViewModel = UserInputViewModel()) {
-        self.viewModel = viewModel
-        self.userInput = viewModel.userInput
-    }
     
     var body: some View {
         NavigationStack(path: $navigationPath) {
@@ -60,7 +54,6 @@ struct UserInputView: View {
                                displayedComponents: [.date, .hourAndMinute])
                 
                 }
-                
 
                 Button(String(localized: "Find train journeys"))
                 {

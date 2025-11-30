@@ -19,7 +19,7 @@ class MatchCheckerService : MatchChecking {
             
         let matchesDuringTravelTime = checkDateAndTime(matches: matches, startDate: leg.departure!, endDate: leg.arrival!)
         var locationMatched = false
-        if(leg.stopovers == nil){
+        if((leg.stopovers?.isEmpty) != nil){
             locationMatched = checkOriginAndDestination(matches: matchesDuringTravelTime, venues: venues, destination: leg.destination!.name)
         }else {
             locationMatched = checkStops(matches: matchesDuringTravelTime, venues: venues, stopovers: leg.stopovers!)

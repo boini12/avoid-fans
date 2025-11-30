@@ -22,9 +22,9 @@ struct TrainSelectionView: View {
 }
 
 #Preview {
-    var leg = Leg(departure: Date(), arrival: Date(), destination: nil, stopovers: [])
-    var journey = Journey(legs: [leg])
-    var journeys: [Journey] = [journey, journey]
+    let leg = Leg(departure: Date(), arrival: Date(), origin: nil, destination: nil, stopovers: [])
+    let journey = Journey(legs: [leg])
+    let journeys: [Journey] = [journey, journey]
     TrainSelectionView(journeys: journeys)
 }
 
