@@ -16,10 +16,12 @@ struct JourneyRow: View {
             HStack {
                 VStack(alignment: .leading)
                 {
-                    Text(String(localized: "Departure:"))
+                    Text("Departure from: \(journey.legs.first!.origin!.name)")
+                        .bold()
                     Text(dateFormatter.convertDateToLocaleString(input: journey.legs.first!.departure!))
-                    Text(String(localized: "Arrival:"))
-                    Text(dateFormatter.convertDateToLocaleString(input: journey.legs.first!.arrival!))
+                    Text("Arrival at: \(journey.legs.last!.destination!.name)")
+                        .bold()
+                    Text(dateFormatter.convertDateToLocaleString(input: journey.legs.last!.arrival!))
                 }
                 .frame(maxWidth: .infinity)
             }
@@ -30,6 +32,6 @@ struct JourneyRow: View {
 }
 
 #Preview {
-    var leg = Leg(departure: Date(), arrival: Date(), destination: nil, stopovers: [])
+    let leg = Leg(departure: Date(), arrival: Date(), origin: nil, destination: nil, stopovers: [])
     JourneyRow(journey: .init(legs: [leg]))
 }

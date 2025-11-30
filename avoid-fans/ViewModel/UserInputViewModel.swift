@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class UserInputViewModel : ObservableObject {
+final class UserInputViewModel : ObservableObject{
     @Injected(\.trainAPIService) var trainAPIService: TrainAPIRequestSending
     
     @Published var userInput: UserInput

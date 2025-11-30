@@ -7,13 +7,13 @@
 
 import Foundation
 
-class UserInput : ObservableObject
+struct UserInput
 {
     let dateFormatter = DateConverter()
-    @Published var journeyTimeSelection: JourneyTimeSelection
-    @Published var travelDate: Date
-    @Published var originIndex : Int
-    @Published var destinationIndex: Int
+    var journeyTimeSelection: JourneyTimeSelection
+    var travelDate: Date
+    var originIndex : Int
+    var destinationIndex: Int
     
     init() {
         self.journeyTimeSelection = JourneyTimeSelection.Departure
