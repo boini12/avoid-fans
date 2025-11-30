@@ -8,26 +8,47 @@
 import SwiftUI
 
 struct UserInputView: View {
-    @StateObject var viewModel: UserInputViewModel = UserInputViewModel()
+    @ObservedObject var viewModel: UserInputViewModel
+    @ObservedObject var userInput: UserInput
     @State private var navigationPath = NavigationPath()
+    
+    init(viewModel: UserInputViewModel = UserInputViewModel()) {
+        self.viewModel = viewModel
+        self.userInput = viewModel.userInput
+    }
     
     var body: some View {
         NavigationStack(path: $navigationPath) {
-            VStack(spacing: 40){
+            VStack(spacing: 60){
                 Text("Enter your travel details and find out if any fans are taking your train!")
                     .textStyle(HeaderTextStyle())
                     .multilineTextAlignment(.center)
+        
+                ZStack {
+                    Button(action: viewModel.switchOriginAndDestination){
+                        Label("", systemImage: "arrow.up.arrow.down")
+                            .frame(width:30, height:30)
+                            .scaledToFit()
+                    }
+                    .offset(x: 175, y: 0)
+                    .buttonStyle(.borderedProminent)
+                    .buttonBorderShape(.circle)
+                    .tint(Color("primaryColor"))
+                    .foregroundStyle(.white)
                 
-                    PickerView(
-                        stations: viewModel.getStations(),
-                        labelText: String(localized: "Origin"),
-                        selectedOptionIndex: $viewModel.userInput.originIndex)
-
-                    PickerView(
-                        stations: viewModel.getStations(),
-                        labelText: String(localized: "Destination"),
-                        selectedOptionIndex: $viewModel.userInput.destinationIndex)
-
+                    VStack(spacing: 20) {
+                        PickerView(
+                            stations: viewModel.getStations(),
+                            labelText: String(localized: "Origin"),
+                            selectedOptionIndex: $viewModel.userInput.originIndex)
+                    
+                        PickerView(
+                            stations: viewModel.getStations(),
+                            labelText: String(localized: "Destination"),
+                            selectedOptionIndex: $viewModel.userInput.destinationIndex)
+                    }
+                }
+                    
                 HStack {
                     Picker("", selection: $viewModel.userInput.journeyTimeSelection) {
                         Text("Departure").tag(JourneyTimeSelection.Departure)
@@ -37,9 +58,11 @@ struct UserInputView: View {
                     DatePicker("",
                                selection: $viewModel.userInput.travelDate,
                                displayedComponents: [.date, .hourAndMinute])
+                
                 }
+                
 
-                Button("Find train journeys")
+                Button(String(localized: "Find train journeys"))
                 {
                     guard viewModel.validate() else { return }
                     

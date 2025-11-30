@@ -36,6 +36,13 @@ final class UserInputViewModel : ObservableObject {
         return true
     }
     
+    public func switchOriginAndDestination() -> Void
+    {
+        let tempOriginId = self.userInput.originIndex
+        self.userInput.originIndex = userInput.destinationIndex
+        self.userInput.destinationIndex = tempOriginId
+    }
+    
     public func getStations() -> [String]
     {
         return [
