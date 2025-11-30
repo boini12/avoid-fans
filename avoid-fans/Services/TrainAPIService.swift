@@ -61,7 +61,8 @@ class TrainAPIService : TrainAPIRequestSending {
             "entrances": "false",
             "subStops": "false",
             "startWalkingWith": "false",
-            "results": "5"
+            "results": "5",
+            "stopovers": "true"
         ]
         
         urlComponents.queryItems = params.map { key, value in
