@@ -11,21 +11,36 @@ class MatchCheckerService : MatchChecking {
     private let soccerApiService = SoccerAPIService()
     private let converter = DateConverter()
     private let variance = 2
+    private let logger: Logging = LoggingService.shared
     
     public func checkForMatches(matches: [Event], venues: [Venue], leg: Leg) -> Bool {
-        if matches.isEmpty {
+        if matches.isEmpty ||
+            venues.isEmpty {
             return false
         }
-            
-        let matchesDuringTravelTime = checkDateAndTime(matches: matches, startDate: leg.departure!, endDate: leg.arrival!)
-        var locationMatched = false
-        if((leg.stopovers?.isEmpty) != nil){
-            locationMatched = checkOriginAndDestination(matches: matchesDuringTravelTime, venues: venues, destination: leg.destination!.name)
-        }else {
-            locationMatched = checkStops(matches: matchesDuringTravelTime, venues: venues, stopovers: leg.stopovers!)
-        }
         
-        return locationMatched
+        if let departure = leg.departure,
+           let arrival = leg.arrival,
+           let stopovers = leg.stopovers,
+           let destination = leg.destination
+        {
+            let matchesDuringTravelTime = checkDateAndTime(matches: matches, startDate: departure, endDate: arrival)
+            
+            var locationMatched = false
+            
+            if(stopovers.isEmpty){
+                locationMatched = checkOriginAndDestination(
+                    matches: matchesDuringTravelTime,
+                    venues: venues,
+                    destination: destination.name)
+            }else {
+                locationMatched = checkStops(matches: matchesDuringTravelTime, venues: venues, stopovers: stopovers)
+            }
+            
+            return locationMatched
+        }
+            
+        return false
     }
     
     private func checkOriginAndDestination(matches: [Event], venues: [Venue], destination: String) -> Bool {
