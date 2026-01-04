@@ -10,7 +10,6 @@ import Foundation
 class MatchCheckerService : MatchChecking {
     private let soccerApiService = SoccerAPIService()
     private let converter = DateConverter()
-    private let variance = 2
     private let logger: Logging = LoggingService.shared
     
     public func checkForMatches(matches: [Event], venues: [Venue], leg: Leg) -> Bool {
@@ -51,7 +50,6 @@ class MatchCheckerService : MatchChecking {
             if venueCity.contains(cleanedDestination) || cleanedDestination.contains(venueCity) {
                 return true
             }
-                
         }
         return false
     }
@@ -74,6 +72,7 @@ class MatchCheckerService : MatchChecking {
     }
     
     private func checkDateAndTime(matches: [Event], startDate: Date, endDate: Date) -> [Event] {
+        let variance = 2
         let adjustedStart = startDate.addingTimeInterval(TimeInterval(-variance * 60 * 60))
         let adjustedEnd = endDate.addingTimeInterval(TimeInterval(variance * 60 * 60))
         
