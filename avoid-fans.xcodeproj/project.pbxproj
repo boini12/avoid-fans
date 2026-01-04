@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		820B46AC2F0A5AC300DBA30A /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820B46AB2F0A5AC300DBA30A /* Logging.swift */; };
+		820B46AE2F0A5B4700DBA30A /* LoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820B46AD2F0A5B4700DBA30A /* LoggingService.swift */; };
 		820FAEF62E5A459F008BAB5D /* JourneyTimeSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 820FAEF52E5A4597008BAB5D /* JourneyTimeSelection.swift */; };
 		821A04212E315603000C8069 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821A04202E315601000C8069 /* ResultView.swift */; };
 		822B2BF12E2D3712005C823D /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B2BF02E2D370E005C823D /* ValidationError.swift */; };
@@ -60,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		820B46AB2F0A5AC300DBA30A /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		820B46AD2F0A5B4700DBA30A /* LoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingService.swift; sourceTree = "<group>"; };
 		820FAEF52E5A4597008BAB5D /* JourneyTimeSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyTimeSelection.swift; sourceTree = "<group>"; };
 		821A04202E315601000C8069 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		822B2BF02E2D370E005C823D /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 				82C448E42E49083700DE0AE5 /* SoccerAPIRequestSending.swift */,
 				82C448E82E4908EB00DE0AE5 /* MatchChecking.swift */,
 				82B583AE2E59C8D900FB0DAB /* TrainAPIService.swift */,
+				820B46AB2F0A5AC300DBA30A /* Logging.swift */,
+				820B46AD2F0A5B4700DBA30A /* LoggingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -412,7 +418,9 @@
 				82FD1C1E2E2D1B3B00FCE8F8 /* UserInput.swift in Sources */,
 				82B583B12E59C91500FB0DAB /* TrainAPIRequestSending.swift in Sources */,
 				82C448B62E48FF2700DE0AE5 /* MatchCheckerService.swift in Sources */,
+				820B46AE2F0A5B4700DBA30A /* LoggingService.swift in Sources */,
 				82FD1C242E2D207200FCE8F8 /* ValidationAlertError.swift in Sources */,
+				820B46AC2F0A5AC300DBA30A /* Logging.swift in Sources */,
 				82F696452E2B84FA00949282 /* Team.swift in Sources */,
 				82B583AF2E59C8D900FB0DAB /* TrainAPIService.swift in Sources */,
 				B0AE80D42A98D29800EA557E /* UserInputView.swift in Sources */,
