@@ -36,10 +36,8 @@ class SoccerAPIService : SoccerAPIRequestSending {
         logRequest(url: url, response: response)
         
         do {
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            let decoded = try decoder.decode(EventResonse.self, from: data)
-            return decoded.events
+            let result : EventResonse = try decodeJSONresponse(data)
+            return result.events
         } catch {
             handleError(data: data, error: error)
             return []
@@ -61,10 +59,8 @@ class SoccerAPIService : SoccerAPIRequestSending {
         logRequest(url: url, response: response)
 
         do {
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            let decoded = try decoder.decode(VenueResponse.self, from: data)
-            return decoded.venues.first!
+            let result : VenueResponse = try decodeJSONresponse(data)
+            return result.venues.first
         } catch {
             handleError(data: data, error: error)
             return nil
@@ -87,6 +83,12 @@ class SoccerAPIService : SoccerAPIRequestSending {
         logger.logError("Decoding failed with error: \(error)")
         let jsonString = String(data: data, encoding: .utf8) ?? "Invalid UTF-8"
         logger.logError("Raw JSON:\n\(jsonString)")
+    }
+    
+    func decodeJSONresponse<T: Decodable>(_ data: Data) throws -> T {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return try decoder.decode(T.self, from: data)
     }
     
     func logRequest(url: URL, response: URLResponse) {
