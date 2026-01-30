@@ -9,40 +9,42 @@ import Foundation
 
 class TrainAPIService : TrainAPIRequestSending {
     private let converter = DateConverter()
-    private let urlEndpoint: String = "https://v6.db.transport.rest"
+    private let urlEndpoint: String = "https://v6.db.transport.rest/"
+    private let locationsUrl: String = "locations"
+    private let journeysUrl: String = "journeys"
+    private let logger: Logging = LoggingService.shared
+    
+    @Injected(\.urlBuilderService) var urlBuilder: UrlBuilding
+    @Injected(\.responseDecodeService) var jsonDecoder: ResponseDecoding
+    @Injected(\.urlRequestLoggingService) var urlRequestLoggingService: UrlRequestLogging
     
     func getId(station: String) async throws -> String {
-        var urlComponents = URLComponents(string: "\(urlEndpoint)/locations")!
-        let params = ["query": station, "results": "1"]
+        let queryItems = [
+                        URLQueryItem(
+                            name: "query",
+                            value: station),
+                          URLQueryItem(
+                            name: "results",
+                            value: "1")]
         
-        urlComponents.queryItems = params.map { key, value in
-            URLQueryItem(name: key, value: value)
-        }
-        
-        guard let url = urlComponents.url else {
-            throw URLError(.badURL)
-        }
-        
-        // todo: react to response and handle possible error
-        let (data, _) = try await URLSession.shared.data(from: url)
-        
-        let stations = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [[String: Any]]
-        
-        let stationObj = stations?.first
-        
-        guard stationObj != nil else {
+        guard let url = urlBuilder.buildRequestUrl(endpoint: urlEndpoint, urlAddition: locationsUrl, queryItems: queryItems) else {
             return ""
         }
         
-        let id = stationObj?["id"] as! String
+        let (data, response) = try await URLSession.shared.data(from: url)
+        urlRequestLoggingService.logRequest(url: url, response: response)
         
-        return id
+        do {
+            let result : [Station] = try jsonDecoder.decodeJSONResponse(data)
+            return result.first?.id ?? ""
+        } catch {
+            urlRequestLoggingService.logDecodingError(data: data, error: error)
+            return ""
+        }
     }
     
     func getJourneys(from: String, to: String, journeyTimeSelection: JourneyTimeSelection, travelDate: Date) async throws -> [Journey] {
-        var urlComponents = URLComponents(string: "\(urlEndpoint)/journeys")!
         let journeyTimeSelectionKey = createJourneyTimeSelectionKey(journeyTimeSelection: journeyTimeSelection)
-        
         let params = [
             "from": from,
             "to": to,
@@ -65,29 +67,24 @@ class TrainAPIService : TrainAPIRequestSending {
             "stopovers": "true"
         ]
         
-        urlComponents.queryItems = params.map { key, value in
+        let queryItems = params.map { key, value in
             URLQueryItem(name: key, value: value)
         }
         
-        guard let url = urlComponents.url else {
-            throw URLError(.badURL)
+        guard let url = urlBuilder.buildRequestUrl(endpoint: urlEndpoint, urlAddition: journeysUrl, queryItems: queryItems) else {
+            return []
         }
         
-        let (data, _) = try await URLSession.shared.data(from: url)
+        let (data, response) = try await URLSession.shared.data(from: url)
+        urlRequestLoggingService.logRequest(url: url, response: response)
         
         do {
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            let decoded = try decoder.decode(JourneyResponse.self, from: data)
-            return decoded.journeys
+            let result : JourneyResponse = try jsonDecoder.decodeJSONResponse(data)
+            return result.journeys
         } catch {
-            // todo ensure this gets logged
-            print("Decoding failed with error: \(error)")
-            let jsonString = String(data: data, encoding: .utf8) ?? "Invalid UTF-8"
-            print("Raw JSON:\n\(jsonString)")
+            urlRequestLoggingService.logDecodingError(data: data, error: error)
             throw error
         }
-    
     }
     
     private func createJourneyTimeSelectionKey(journeyTimeSelection: JourneyTimeSelection) -> String {
