@@ -15,6 +15,8 @@ class SoccerAPIService : SoccerAPIRequestSending {
     private let dateConverter = DateConverter()
     private let logger : Logging = LoggingService.shared
     
+    @Injected(\.urlBuilderService) var urlBuilder: UrlBuilding
+    
     public func fetchBundesligaMatches(for date: Date) async throws -> [Event] {
         let queryItems = [
                         URLQueryItem(
@@ -25,11 +27,9 @@ class SoccerAPIService : SoccerAPIRequestSending {
                             value: league)
                         ]
         
-        guard let url = buildRequestUrl(
-                 urlAddition: eventLookUpUrl,
-                 queryItems: queryItems)
+        guard let url = urlBuilder.buildRequestUrl(endpoint: urlEndpoint, urlAddition: eventLookUpUrl, queryItems: queryItems)
         else {
-            throw URLError(.badURL)
+            return []
         }
         
         let (data, response) = try await URLSession.shared.data(from: url)
@@ -51,7 +51,7 @@ class SoccerAPIService : SoccerAPIRequestSending {
                     value: id)
                     ]
         
-        guard let url = buildRequestUrl(urlAddition: venueLookUpUrl, queryItems: queryItems) else {
+        guard let url = urlBuilder.buildRequestUrl(endpoint: urlEndpoint, urlAddition: venueLookUpUrl, queryItems: queryItems) else {
             throw URLError(.badURL)
         }
         
@@ -65,18 +65,6 @@ class SoccerAPIService : SoccerAPIRequestSending {
             handleError(data: data, error: error)
             return nil
         }
-    }
-    
-    func buildRequestUrl(urlAddition: String, queryItems: [URLQueryItem]) -> URL? {
-        var urlComponents = URLComponents(string: urlEndpoint + urlAddition)!
-        urlComponents.queryItems = queryItems
-        
-        guard let url = urlComponents.url else {
-            logger.logError("Failed to create URL from components. urlAddition: \(urlAddition), queryItems: \(queryItems)")
-            return nil
-        }
-        
-        return url
     }
     
     func handleError(data: Data, error: Error) {
