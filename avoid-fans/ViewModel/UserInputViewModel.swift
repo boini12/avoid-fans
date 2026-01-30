@@ -71,10 +71,19 @@ final class UserInputViewModel : ObservableObject{
                 journeyTimeSelection: userInput.journeyTimeSelection,
                 travelDate: userInput.travelDate)
             
-            return foundJourneys;
+            return cleanJourneys(journeys: foundJourneys)
             
         }catch{
             return []
+        }
+    }
+    
+    private func cleanJourneys(journeys: [Journey]) -> [Journey] {
+        journeys.filter { journey in
+            !journey.legs.isEmpty &&
+            journey.legs.allSatisfy {
+                ($0.departure != nil) && ($0.arrival != nil)
+            }
         }
     }
     
