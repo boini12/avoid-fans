@@ -15,6 +15,7 @@ class TrainAPIService : TrainAPIRequestSending {
     private let logger: Logging = LoggingService.shared
     
     @Injected(\.urlBuilderService) var urlBuilder: UrlBuilding
+    @Injected(\.responseDecodeService) var jsonDecoder: ResponseDecoding
     
     func getId(station: String) async throws -> String {
         let queryItems = [
@@ -32,17 +33,12 @@ class TrainAPIService : TrainAPIRequestSending {
         // todo: react to response and handle possible error
         let (data, _) = try await URLSession.shared.data(from: url)
         
-        let stations = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [[String: Any]]
-        
-        let stationObj = stations?.first
-        
-        guard stationObj != nil else {
+        do {
+            let result : [Station] = try jsonDecoder.decodeJSONResponse(data)
+            return result.first?.id ?? ""
+        } catch {
             return ""
         }
-        
-        let id = stationObj?["id"] as! String
-        
-        return id
     }
     
     func getJourneys(from: String, to: String, journeyTimeSelection: JourneyTimeSelection, travelDate: Date) async throws -> [Journey] {
@@ -80,10 +76,8 @@ class TrainAPIService : TrainAPIRequestSending {
         let (data, _) = try await URLSession.shared.data(from: url)
         
         do {
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = .iso8601
-            let decoded = try decoder.decode(JourneyResponse.self, from: data)
-            return decoded.journeys
+            let result : JourneyResponse = try jsonDecoder.decodeJSONResponse(data)
+            return result.journeys
         } catch {
             // todo ensure this gets logged
             print("Decoding failed with error: \(error)")
@@ -91,7 +85,6 @@ class TrainAPIService : TrainAPIRequestSending {
             print("Raw JSON:\n\(jsonString)")
             throw error
         }
-    
     }
     
     private func createJourneyTimeSelectionKey(journeyTimeSelection: JourneyTimeSelection) -> String {

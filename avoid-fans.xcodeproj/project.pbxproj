@@ -18,6 +18,7 @@
 		82A10DAB2F2D34D400B82BC3 /* UrlErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A10DAA2F2D34D400B82BC3 /* UrlErrorHandling.swift */; };
 		82A10DAD2F2D351A00B82BC3 /* ResponseDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A10DAC2F2D351A00B82BC3 /* ResponseDecoding.swift */; };
 		82A10DB12F2D357800B82BC3 /* UrlBuilderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A10DB02F2D357800B82BC3 /* UrlBuilderService.swift */; };
+		82A10DF22F2D3D1500B82BC3 /* ResponseDecodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A10DF12F2D3D1500B82BC3 /* ResponseDecodeService.swift */; };
 		82ACC6DB2E2AC59900833A41 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACC6DA2E2AC59400833A41 /* PickerView.swift */; };
 		82B583AF2E59C8D900FB0DAB /* TrainAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B583AE2E59C8D900FB0DAB /* TrainAPIService.swift */; };
 		82B583B12E59C91500FB0DAB /* TrainAPIRequestSending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B583B02E59C90C00FB0DAB /* TrainAPIRequestSending.swift */; };
@@ -79,6 +80,7 @@
 		82A10DAA2F2D34D400B82BC3 /* UrlErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlErrorHandling.swift; sourceTree = "<group>"; };
 		82A10DAC2F2D351A00B82BC3 /* ResponseDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecoding.swift; sourceTree = "<group>"; };
 		82A10DB02F2D357800B82BC3 /* UrlBuilderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBuilderService.swift; sourceTree = "<group>"; };
+		82A10DF12F2D3D1500B82BC3 /* ResponseDecodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecodeService.swift; sourceTree = "<group>"; };
 		82ACC6DA2E2AC59400833A41 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		82B583AE2E59C8D900FB0DAB /* TrainAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAPIService.swift; sourceTree = "<group>"; };
 		82B583B02E59C90C00FB0DAB /* TrainAPIRequestSending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAPIRequestSending.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				82A10DAA2F2D34D400B82BC3 /* UrlErrorHandling.swift */,
 				82A10DAC2F2D351A00B82BC3 /* ResponseDecoding.swift */,
 				82A10DB02F2D357800B82BC3 /* UrlBuilderService.swift */,
+				82A10DF12F2D3D1500B82BC3 /* ResponseDecodeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				82FAF7CF2E9A97EE003FFCF1 /* TrainSelectionView.swift in Sources */,
 				82B583B32E59D60B00FB0DAB /* Station.swift in Sources */,
 				82FAF7CB2E9A9161003FFCF1 /* JourneyResponse.swift in Sources */,
+				82A10DF22F2D3D1500B82BC3 /* ResponseDecodeService.swift in Sources */,
 				822B2BF32E2D37DE005C823D /* ValidationErrorType.swift in Sources */,
 				82C3B0C12EA5288C00AF6D65 /* EventResonse.swift in Sources */,
 				822B2BF12E2D3712005C823D /* ValidationError.swift in Sources */,
