@@ -17,6 +17,7 @@ class SoccerAPIService : SoccerAPIRequestSending {
     
     @Injected(\.urlBuilderService) var urlBuilder: UrlBuilding
     @Injected(\.responseDecodeService) var jsonDecoder: ResponseDecoding
+    @Injected(\.urlRequestLoggingService) var urlRequestLoggingService: UrlRequestLogging
     
     public func fetchBundesligaMatches(for date: Date) async throws -> [Event] {
         let queryItems = [
@@ -34,13 +35,13 @@ class SoccerAPIService : SoccerAPIRequestSending {
         }
         
         let (data, response) = try await URLSession.shared.data(from: url)
-        logRequest(url: url, response: response)
+        urlRequestLoggingService.logRequest(url: url, response: response)
         
         do {
             let result : EventResonse = try jsonDecoder.decodeJSONResponse(data)
             return result.events
         } catch {
-            handleError(data: data, error: error)
+            urlRequestLoggingService.logDecodingError(data: data, error: error)
             return []
         }
     }
@@ -57,25 +58,14 @@ class SoccerAPIService : SoccerAPIRequestSending {
         }
         
         let (data, response) = try await URLSession.shared.data(from: url)
-        logRequest(url: url, response: response)
+        urlRequestLoggingService.logRequest(url: url, response: response)
 
         do {
             let result : VenueResponse = try jsonDecoder.decodeJSONResponse(data)
             return result.venues.first
         } catch {
-            handleError(data: data, error: error)
+            urlRequestLoggingService.logDecodingError(data: data, error: error)
             return nil
         }
-    }
-    
-    func handleError(data: Data, error: Error) {
-        logger.logError("Decoding failed with error: \(error)")
-        let jsonString = String(data: data, encoding: .utf8) ?? "Invalid UTF-8"
-        logger.logError("Raw JSON:\n\(jsonString)")
-    }
-    
-    func logRequest(url: URL, response: URLResponse) {
-        logger.logInfo("Fetched data from: \(url)")
-        logger.logInfo("Response from server: \(response)")
     }
 }

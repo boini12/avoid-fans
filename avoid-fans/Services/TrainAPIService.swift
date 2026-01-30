@@ -16,6 +16,7 @@ class TrainAPIService : TrainAPIRequestSending {
     
     @Injected(\.urlBuilderService) var urlBuilder: UrlBuilding
     @Injected(\.responseDecodeService) var jsonDecoder: ResponseDecoding
+    @Injected(\.urlRequestLoggingService) var urlRequestLoggingService: UrlRequestLogging
     
     func getId(station: String) async throws -> String {
         let queryItems = [
@@ -30,13 +31,14 @@ class TrainAPIService : TrainAPIRequestSending {
             return ""
         }
         
-        // todo: react to response and handle possible error
-        let (data, _) = try await URLSession.shared.data(from: url)
+        let (data, response) = try await URLSession.shared.data(from: url)
+        urlRequestLoggingService.logRequest(url: url, response: response)
         
         do {
             let result : [Station] = try jsonDecoder.decodeJSONResponse(data)
             return result.first?.id ?? ""
         } catch {
+            urlRequestLoggingService.logDecodingError(data: data, error: error)
             return ""
         }
     }
@@ -73,16 +75,14 @@ class TrainAPIService : TrainAPIRequestSending {
             return []
         }
         
-        let (data, _) = try await URLSession.shared.data(from: url)
+        let (data, response) = try await URLSession.shared.data(from: url)
+        urlRequestLoggingService.logRequest(url: url, response: response)
         
         do {
             let result : JourneyResponse = try jsonDecoder.decodeJSONResponse(data)
             return result.journeys
         } catch {
-            // todo ensure this gets logged
-            print("Decoding failed with error: \(error)")
-            let jsonString = String(data: data, encoding: .utf8) ?? "Invalid UTF-8"
-            print("Raw JSON:\n\(jsonString)")
+            urlRequestLoggingService.logDecodingError(data: data, error: error)
             throw error
         }
     }

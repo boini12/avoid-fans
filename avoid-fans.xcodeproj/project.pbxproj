@@ -15,10 +15,11 @@
 		822B2BF32E2D37DE005C823D /* ValidationErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822B2BF22E2D37D9005C823D /* ValidationErrorType.swift */; };
 		828BCB872E510D9A00C771C8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 828BCB862E510D9A00C771C8 /* Localizable.xcstrings */; };
 		82A10DA92F2D341E00B82BC3 /* UrlBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A10DA82F2D341E00B82BC3 /* UrlBuilding.swift */; };
-		82A10DAB2F2D34D400B82BC3 /* UrlErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A10DAA2F2D34D400B82BC3 /* UrlErrorHandling.swift */; };
+		82A10DAB2F2D34D400B82BC3 /* UrlRequestLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A10DAA2F2D34D400B82BC3 /* UrlRequestLogging.swift */; };
 		82A10DAD2F2D351A00B82BC3 /* ResponseDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A10DAC2F2D351A00B82BC3 /* ResponseDecoding.swift */; };
 		82A10DB12F2D357800B82BC3 /* UrlBuilderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A10DB02F2D357800B82BC3 /* UrlBuilderService.swift */; };
 		82A10DF22F2D3D1500B82BC3 /* ResponseDecodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A10DF12F2D3D1500B82BC3 /* ResponseDecodeService.swift */; };
+		82A10DF42F2D434600B82BC3 /* UrlRequestLoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A10DF32F2D434600B82BC3 /* UrlRequestLoggingService.swift */; };
 		82ACC6DB2E2AC59900833A41 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACC6DA2E2AC59400833A41 /* PickerView.swift */; };
 		82B583AF2E59C8D900FB0DAB /* TrainAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B583AE2E59C8D900FB0DAB /* TrainAPIService.swift */; };
 		82B583B12E59C91500FB0DAB /* TrainAPIRequestSending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B583B02E59C90C00FB0DAB /* TrainAPIRequestSending.swift */; };
@@ -77,10 +78,11 @@
 		82858AEB2E34EDAB0043F0FA /* avoid-fansUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "avoid-fansUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		828BCB862E510D9A00C771C8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		82A10DA82F2D341E00B82BC3 /* UrlBuilding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBuilding.swift; sourceTree = "<group>"; };
-		82A10DAA2F2D34D400B82BC3 /* UrlErrorHandling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlErrorHandling.swift; sourceTree = "<group>"; };
+		82A10DAA2F2D34D400B82BC3 /* UrlRequestLogging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequestLogging.swift; sourceTree = "<group>"; };
 		82A10DAC2F2D351A00B82BC3 /* ResponseDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecoding.swift; sourceTree = "<group>"; };
 		82A10DB02F2D357800B82BC3 /* UrlBuilderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBuilderService.swift; sourceTree = "<group>"; };
 		82A10DF12F2D3D1500B82BC3 /* ResponseDecodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDecodeService.swift; sourceTree = "<group>"; };
+		82A10DF32F2D434600B82BC3 /* UrlRequestLoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequestLoggingService.swift; sourceTree = "<group>"; };
 		82ACC6DA2E2AC59400833A41 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		82B583AE2E59C8D900FB0DAB /* TrainAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAPIService.swift; sourceTree = "<group>"; };
 		82B583B02E59C90C00FB0DAB /* TrainAPIRequestSending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAPIRequestSending.swift; sourceTree = "<group>"; };
@@ -169,10 +171,11 @@
 				820B46AB2F0A5AC300DBA30A /* Logging.swift */,
 				820B46AD2F0A5B4700DBA30A /* LoggingService.swift */,
 				82A10DA82F2D341E00B82BC3 /* UrlBuilding.swift */,
-				82A10DAA2F2D34D400B82BC3 /* UrlErrorHandling.swift */,
+				82A10DAA2F2D34D400B82BC3 /* UrlRequestLogging.swift */,
 				82A10DAC2F2D351A00B82BC3 /* ResponseDecoding.swift */,
 				82A10DB02F2D357800B82BC3 /* UrlBuilderService.swift */,
 				82A10DF12F2D3D1500B82BC3 /* ResponseDecodeService.swift */,
+				82A10DF32F2D434600B82BC3 /* UrlRequestLoggingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -432,7 +435,7 @@
 				82C448B32E48FE4400DE0AE5 /* SoccerAPIService.swift in Sources */,
 				82FD1C1E2E2D1B3B00FCE8F8 /* UserInput.swift in Sources */,
 				82B583B12E59C91500FB0DAB /* TrainAPIRequestSending.swift in Sources */,
-				82A10DAB2F2D34D400B82BC3 /* UrlErrorHandling.swift in Sources */,
+				82A10DAB2F2D34D400B82BC3 /* UrlRequestLogging.swift in Sources */,
 				82C448B62E48FF2700DE0AE5 /* MatchCheckerService.swift in Sources */,
 				820B46AE2F0A5B4700DBA30A /* LoggingService.swift in Sources */,
 				82FD1C242E2D207200FCE8F8 /* ValidationAlertError.swift in Sources */,
@@ -443,6 +446,7 @@
 				B0AE80D42A98D29800EA557E /* UserInputView.swift in Sources */,
 				82BF0B2C2EA6B43C00ABDB13 /* Stop.swift in Sources */,
 				82ACC6DB2E2AC59900833A41 /* PickerView.swift in Sources */,
+				82A10DF42F2D434600B82BC3 /* UrlRequestLoggingService.swift in Sources */,
 				B0AE80CE2A98C86F00EA557E /* ContentView.swift in Sources */,
 				82F696472E2B853F00949282 /* MatchResult.swift in Sources */,
 				82C448E92E4908EB00DE0AE5 /* MatchChecking.swift in Sources */,
