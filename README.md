@@ -1,8 +1,8 @@
-# Avoid Fans
+# Avoid Fans 🛑
 
 An iOS app that helps you avoid unexpected crowds during your public transit journeys, by comparing soccer game data with the stops of your train journey.
 
-## Restrictions
+## ⚠️ Restrictions
 
 Currently this app only supports the German Bundesliga as well as the train network of the Deutsche Bahn.
 
@@ -15,14 +15,13 @@ Currently this app only supports the German Bundesliga as well as the train netw
 - **Get feedback, if a clash was found**\
   The app provides feedback, if a soccer game was found that clashes with your train journey
 
-
 ## 📦 Tech Stack
 
 - Swift (iOS 18.3)
 - SwiftUI
 - Xcode
 
-## Running the Project
+## 🚀 Running the Project
 
 1. To run the application you need to have Xcode installed.
 2. Fork the project and open it in Xcode. 
