@@ -21,6 +21,10 @@ Currently this app only supports the German Bundesliga as well as the train netw
 - SwiftUI
 - Xcode
 
+## Used APIs
+- https://www.thesportsdb.com/documentation
+- https://v6.db.transport.rest/api.html
+
 ## 🚀 Running the Project
 
 1. To run the application you need to have Xcode installed.
