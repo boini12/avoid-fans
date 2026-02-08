@@ -8,11 +8,11 @@ Currently this app only supports the German Bundesliga as well as the train netw
 
 ## ✨ Features
 
-- **Find train journeys based on origin, destination and depature/arrival**
+- **Find train journeys based on origin, destination and depature/arrival**\
   The app will display 5 trains that are close to the provided journeys.
   The selected journey will be used to find a possible clash with a soccer game.
 
-- **Get feedback, if a clash was found**
+- **Get feedback, if a clash was found**\
   The app provides feedback, if a soccer game was found that clashes with your train journey
 
 
