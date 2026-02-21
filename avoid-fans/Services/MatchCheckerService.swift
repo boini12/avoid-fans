@@ -33,7 +33,8 @@ class MatchCheckerService : MatchChecking {
                     venues: venues,
                     destination: destination.name)
             }else {
-                locationMatched = checkStops(matches: matchesDuringTravelTime, venues: venues, stopovers: stopovers)
+                let currentVenues = extractCurrentVenues(matches: matches, venue: venues)
+                locationMatched = checkStops(venues: currentVenues, stopovers: stopovers)
             }
             
             return locationMatched
@@ -54,21 +55,37 @@ class MatchCheckerService : MatchChecking {
         return false
     }
     
-    private func checkStops(matches: [Event], venues: [Venue], stopovers: [Stopover]) -> Bool {
-        let combined = matches.compactMap { match -> (Event, Venue)? in
-            guard let venue = venues.first(where: { $0.idVenue == match.idVenue }) else { return nil }
-            return (match, venue)
-        }
+    private func extractCurrentVenues(matches: [Event], venue: [Venue]) -> [Venue] {
+        var currentVenues: [Venue] = []
         
-        for (_, venue) in combined {
-            if stopovers.contains(where: { stopover in
-                let stopName = stopover.stop.name.lowercased()
-                return stopName.contains(venue.strLocation) || venue.strLocation.contains(stopName)
-            }){
-                return true
+        for match in matches {
+            for venue in venue {
+                if match.idVenue == venue.idVenue {
+                    currentVenues.append(venue)
+                }
             }
         }
-        return false
+        return currentVenues
+    }
+    
+    private func checkStops(venues: [Venue], stopovers: [Stopover]) -> Bool {
+        var cleanedStops: [String] = []
+        for stopover in stopovers {
+            cleanedStops.append(stopover.stop.name.components(separatedBy: ",")[0].lowercased())
+        }
+        var cleanedVenues: [String] = []
+        for venue in venues {
+            let venueParts = venue.strLocation.components(separatedBy: ",")
+            cleanedVenues.append(venueParts[venueParts.count - 2].lowercased())
+        }
+        
+        let hasMatch = cleanedStops.contains { stopName in
+            cleanedVenues.contains { venueName in
+                venueName.contains(stopName) || stopName.contains(venueName)
+            }
+        }
+
+        return hasMatch
     }
     
     private func checkDateAndTime(matches: [Event], startDate: Date, endDate: Date) -> [Event] {
